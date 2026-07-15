@@ -5,17 +5,14 @@ export const prerender = true;
 
 const lang = 'ru';
 const title = 'Штат';
-const pageTitle = 'Штат организации';
+const pageTitle = 'Штат';
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
-  <p>Штат Общественного объединения «Каунтерпарт-Шериктеш» состоит из квалифицированных специалистов в области прав человека, юриспруденции, экологии, социологии и управления проектами.</p>
-
-  <h2>Руководство</h2>
-  <p>Исполнительный директор и руководители программных отделов обеспечивают стратегическое и оперативное управление деятельностью организации.</p>
-
-  <h2>Сотрудники</h2>
-  <p>В организации работают юристы, эксперты по мониторингу, тренеры, координаторы проектов, специалисты по связям с общественностью и административный персонал. Многие сотрудники имеют многолетний опыт работы в правозащитной сфере и прошли специализированное обучение.</p>
-
-  <p>Организация также привлекает внешних экспертов и консультантов для реализации отдельных проектов и программ.</p>
+  <div class="staff-grid">
+  <div class="staff-card">
+    <div class="staff-photo-placeholder" style="width:80px;height:106px;background:var(--border);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-light);">?</div>
+    <div>
+      <div class="staff-name">Нурдин Саттаров</div>
+      <div class="staff-role">Исполнительный директор
 </PageLayout>

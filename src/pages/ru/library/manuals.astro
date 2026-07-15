@@ -4,30 +4,21 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 export const prerender = true;
 
 const lang = 'ru';
-const title = 'Учебные пособия';
-const pageTitle = 'Учебные пособия и методические материалы';
+const title = 'Обучающие пособия';
+const pageTitle = 'Обучающие пособия';
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
-  <p>Учебные пособия и методические материалы, разработанные организацией:</p>
-
-  <ul>
-    <li><a href="/documents/CHRF-Manual-Fac-TOT1-Russian2001.pdf" target="_blank">Руководство по проведению тренингов для тренеров (часть 1)</a> (PDF)</li>
-    <li><a href="/documents/CHRF-Manual-Fac-TOT2-Russian2001.pdf" target="_blank">Руководство по проведению тренингов для тренеров (часть 2)</a> (PDF)</li>
-    <li><a href="/documents/CHRF-Manual-Par-TOT1-Russian2001.pdf" target="_blank">Руководство участника тренинга для тренеров (часть 1)</a> (PDF)</li>
-    <li><a href="/documents/CHRF-Manual-Par-TOT2-Russian2001.pdf" target="_blank">Руководство участника тренинга для тренеров (часть 2)</a> (PDF)</li>
-    <li><a href="/documents/prava_cheloveka.pdf" target="_blank">Права человека</a> (PDF)</li>
-    <li><a href="/documents/alexeev.pdf" target="_blank">Алексеев С.С. — Теория права</a> (PDF)</li>
-    <li><a href="/documents/hr_conception.pdf" target="_blank">Концепция прав человека</a> (PDF)</li>
-    <li><a href="/documents/rights_in_const.pdf" target="_blank">Права человека в конституции</a> (PDF)</li>
-    <li><a href="/documents/international_hr.pdf" target="_blank">Международные механизмы защиты прав человека</a> (PDF)</li>
-    <li><a href="/documents/casestudy_ru.pdf" target="_blank">Сборник практических ситуаций по правам человека</a> (PDF)</li>
-    <li><a href="/documents/bulletin1_ru.pdf" target="_blank">Бюллетень №1</a> (PDF)</li>
-    <li><a href="/documents/bulletin2_ru.pdf" target="_blank">Бюллетень №2</a> (PDF)</li>
-    <li><a href="/documents/bulletin3_ru.pdf" target="_blank">Бюллетень №3</a> (PDF)</li>
-    <li><a href="/documents/bulletin4_ru.pdf" target="_blank">Бюллетень №4</a> (PDF)</li>
-    <li><a href="/documents/natconf_ru.pdf" target="_blank">Материалы национальной конференции</a> (PDF)</li>
-    <li><a href="/documents/survey_report.pdf" target="_blank">Отчет по результатам исследования</a> (PDF)</li>
-    <li><a href="/documents/hr_pbda.pdf" target="_blank">Права человека и бюджетный процесс</a> (PDF)</li>
-  </ul>
+  <div class="doc-list">
+  <div class="doc-section-heading">Тренинг для учителей по правам человека. Пособие фасилитатора.</div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Fac-TOT1-Russian2001.pdf" target="_blank" class="doc-link">Книга 1 - PDF 1,97 Мб</a></div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Fac-TOT2-Russian2001.pdf" target="_blank" class="doc-link">Книга 2 - PDF 1,36 Мб</a></div>
+  <div class="doc-section-heading">Тренинг для учителей по правам человека. Пособие участника.</div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Par-TOT1-Russian2001.pdf" target="_blank" class="doc-link">Книга 1 - PDF 1,62 Мб</a></div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Par-TOT2-Russian2001.pdf" target="_blank" class="doc-link">Книга 2 - PDF 1,24 Мб</a></div>
+  <div class="doc-item"><img class="doc-thumb" src="../pix/prava_cheloveka.jpg" alt=""><a href="../books/prava_cheloveka.pdf" target="_blank" class="doc-link">А.Азаров, В.Ройтер, К.Хюфнер "Права человека. Международные и российские механизмы защиты" - PDF 1,91 Мб</a></div>
+  <div class="doc-item"><img class="doc-thumb" src="../pix/alexeev.jpg" alt=""><a href="../books/alexeev.pdf" target="_blank" class="doc-link">Алексеев С.С. "Введение в правоведение" Учебное пособие для школьников (9-11 кл.) - PDF 472 Кб</a></div>
+  <div class="doc-item"><img class="doc-thumb" src="../pix/hr_conception.jpg" alt=""><a href="../books/hr_conception.pdf" target="_blank" class="doc-link">Марек Новицки "Права человека. Что входит, а что не входит в это понятие?" - PDF 549 Кб</a></div>
+  <div class="doc-item"><img class="doc-thumb" src="../pix/rights_in_const.jpg" alt=""><a href="../books/rights_in_const.pdf" target="_blank" class="doc-link">Богуслав Банашак "Права личности и механизмы их защиты в конституциях некоторых стран" - PDF 400 Кб</a></div>
+  <div class="doc-item"><img class="doc-thumb" src="../pix/int_hr.jpg" alt=""><a href="../books/international_hr.pdf" target="_blank" class="doc-link">Цезары Мик "Введение в международное право в области защиты прав человека" - PDF - 468 Кб</a>
 </PageLayout>

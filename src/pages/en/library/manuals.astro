@@ -4,22 +4,16 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 export const prerender = true;
 
 const lang = 'en';
-const title = 'Manuals';
-const pageTitle = 'Manuals and Methodological Materials';
+const title = 'Training Manuals';
+const pageTitle = 'Training Manuals';
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
-  <p>Training manuals and methodological materials developed by the organization:</p>
-
-  <ul>
-    <li><a href="/documents/CHRF-Manual-Fac-TOT1-English2001.pdf" target="_blank">Training of Trainers Manual — Facilitator (Part 1)</a> (PDF)</li>
-    <li><a href="/documents/CHRF-Manual-Fac-TOT2-English2001.pdf" target="_blank">Training of Trainers Manual — Facilitator (Part 2)</a> (PDF)</li>
-    <li><a href="/documents/CHRF-Manual-Par-TOT1-English2001.pdf" target="_blank">Training of Trainers Manual — Participant (Part 1)</a> (PDF)</li>
-    <li><a href="/documents/CHRF-Manual-Par-TOT2-English2001.pdf" target="_blank">Training of Trainers Manual — Participant (Part 2)</a> (PDF)</li>
-    <li><a href="/documents/casestudy_en.pdf" target="_blank">Human Rights Case Study Collection</a> (PDF)</li>
-    <li><a href="/documents/bulletin1_ru.pdf" target="_blank">Bulletin #1</a> (PDF)</li>
-    <li><a href="/documents/eu_bulletin-1.pdf" target="_blank">EU Bulletin #1</a> (PDF)</li>
-    <li><a href="/documents/eu_bulletin-2.pdf" target="_blank">EU Bulletin #2</a> (PDF)</li>
-    <li><a href="/documents/eu_bulletin-3.pdf" target="_blank">EU Bulletin #3</a> (PDF)</li>
-  </ul>
+  <div class="doc-list">
+  <div class="doc-section-heading">Training for Human Rights Trainers. Facilitator's Manual.</div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Fac-TOT1-English2001.pdf" target="_blank" class="doc-link">Book 1 - PDF 1.47 Mb</a></div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Fac-TOT2-English2001.pdf" target="_blank" class="doc-link">Book 2 - PDF 1.16 Mb</a></div>
+  <div class="doc-section-heading">Training for Human Rights Trainers. Participant's Manual.</div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Par-TOT1-English2001.pdf" target="_blank" class="doc-link">Book 1 - PDF 1.29 Mb</a></div>
+  <div class="doc-item"><a href="../books/CHRF-Manual-Par-TOT2-English2001.pdf" target="_blank" class="doc-link">Book 2 - PDF 1.06 Mb</a>
 </PageLayout>
