@@ -11,8 +11,8 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -22,4 +22,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: 0d457a0fa23bfb5001d2f493edf432c5
-          command: pages deploy dist --project-name=sheriktesh-org-kg --branch=main
+          command: pages deploy dist --project-name=sheriktesh-org-kg --branch=main --commit-dirty=true
