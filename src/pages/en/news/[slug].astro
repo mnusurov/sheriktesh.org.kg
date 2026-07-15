@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const entries = await getCollection('news', (e) => e.data.lang === 'en');
+  return entries.map((e) => ({
+    params: { slug: e.slug.replace(/^en-/, '') },
+    props: { entry: e },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<PageLayout title={entry.data.title} lang={entry.data.lang} pageTitle={entry.data.title}>
+  <Content />
+</PageLayout>

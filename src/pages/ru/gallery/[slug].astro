@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const entries = await getCollection('galleries', (e) => e.data.lang === 'ru');
+  return entries.map((e) => ({
+    params: { slug: String(e.data.order) },
+    props: { entry: e },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<PageLayout title={entry.data.title} lang={entry.data.lang} pageTitle={entry.data.title}>
+  <div class="gallery-grid">
+    {entry.data.images.map((img) => (
+      <img src={img} alt="" />
+    ))}
+  </div>
+</PageLayout>
