@@ -1,0 +1,20 @@
+---
+title: 'March 7, 8, 2008, ToT on Human Rights'
+lang: 'en'
+date: '2008-03-07'
+---
+
+<p><strong>March 7, 8, 2008, ToT on Human Rights</strong></p>
+          <p>Special training of trainers on human rights will be undertaken in the Public Association Counterpart Sheriktesh on the following address: 
+204 Abdrakhmanova str., Bishkek, Kyrgyzstan, 720040
+</p>
+          <p>The training is to be conducted by Public Association Counterpart Sheriktesh in the framework of the project, which was approved and supported by European Commission in the Kyrgyz Republic within campaign &quot;Fostering a Culture of Human Rights in Kyrgyzstan&quot;.</p>
+          <p>&quot;Overall objective – to increase and strengthen knowledge of participants in the area of human rights, including international covenants and national legislation on human rights, to develop their skills, to meet with new methods, procedure how to conduct monitoring on human rights or particularly, separate taken themes and rights&quot;.</p>
+          <p>Training is intended for: representatives of civil society organizations, dealing with promotion of fundamental freedoms and human rights in the country.</p>
+          <p>Trainer: Altynay Hamzaeva – expert-practitioner, PhD in law, head of criminal justice sub-faculty, Kyrgyz Russian Slavic University.</p>
+          <p>Training goal: forming and development of particular skills for human rights training conducting.</p>
+          <p>Terms of participation: In order to take part in the work of training all interested persons should send an application via e-mail or fax with justification of need of training attendance to the following addresses:<br>
+          e-mail: <a href="mailto:office@sheriktesh.org.kg">office@sheriktesh.org.kg</a><br>
+          fax: (+996 312) 62-08-30          </p>
+          <p>Preliminary registration is obligatory!</p>
+          <p>Training will be provided free of charge. After training completion the certificate of attendance is to be issued.</p>

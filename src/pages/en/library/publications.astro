@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 export const prerender = true;
@@ -6,10 +7,17 @@ export const prerender = true;
 const lang = 'en';
 const title = 'Our Publications';
 const pageTitle = 'Our Publications';
+
+const [category] = await getCollection('documents', (d) => d.data.category === 'publications' && d.data.lang === lang);
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
   <div class="doc-list">
-  <div class="doc-item"><img class="doc-thumb" src="../pix/bookcover_en.jpg" alt=""><a href="../books/casestudy_en.pdf" target="_blank" class="doc-link">"Kyrgyzstan Case Study Sourcebook: Partnership and Collaboration between Government and Civil Society Organizations" - PDF 1.67 Mb</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/bull1cover_en.jpg" alt=""><a href="../books/bulletiln1_en.pdf" target="_blank" class="doc-link">General quarter report on results of public discussions within the project "Fostering Strong and Effective Collaboration between Government and CSOs in Kyrgyzstan" - PDF 176 Kb</a>
+    {category.data.docs.map((doc) => (
+      <div class="doc-item">
+        {doc.cover && <img class="doc-thumb" src={doc.cover} alt="" />}
+        <a href={`/assets/documents/${doc.pdf}`} target="_blank" class="doc-link">{doc.description}</a>
+      </div>
+    ))}
+  </div>
 </PageLayout>

@@ -22,14 +22,26 @@
             "publications"
           ]
         },
-        "pdf": {
-          "type": "string"
-        },
-        "cover": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
+        "docs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pdf": {
+                "type": "string"
+              },
+              "cover": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "pdf"
+            ],
+            "additionalProperties": false
+          }
         },
         "$schema": {
           "type": "string"
@@ -39,7 +51,7 @@
         "title",
         "lang",
         "category",
-        "pdf"
+        "docs"
       ],
       "additionalProperties": false
     }

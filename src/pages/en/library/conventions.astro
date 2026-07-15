@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 export const prerender = true;
@@ -6,13 +7,17 @@ export const prerender = true;
 const lang = 'en';
 const title = 'Conventions';
 const pageTitle = 'Conventions';
+
+const [category] = await getCollection('documents', (d) => d.data.category === 'conventions' && d.data.lang === lang);
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
   <div class="doc-list">
-  <div class="doc-item"><a href="../books/udhr_en.pdf" target="_blank" class="doc-link">Universal Declaration of Human Rights - PDF 35.3 Kb</a></div>
-  <div class="doc-item"><a href="../books/echr_en.pdf" target="_blank" class="doc-link">European Convention on Human Rights - PDF 192 Kb</a></div>
-  <div class="doc-item"><a href="../books/ecosoc_en.pdf" target="_blank" class="doc-link">International Covenant on Economic, Social and Cultural Rights - PDF 43.3 Kb</a></div>
-  <div class="doc-item"><a href="../books/cedaw_en.pdf" target="_blank" class="doc-link">Convention on the Elimination of All Forms of Discrimination Against Women - PDF 45.5 Kb</a></div>
-  <div class="doc-item"><a href="../books/crc_en.pdf" target="_blank" class="doc-link">Convention on the Rights of the Child - PDF 76.4 Kb</a>
+    {category.data.docs.map((doc) => (
+      <div class="doc-item">
+        {doc.cover && <img class="doc-thumb" src={doc.cover} alt="" />}
+        <a href={`/assets/documents/${doc.pdf}`} target="_blank" class="doc-link">{doc.description}</a>
+      </div>
+    ))}
+  </div>
 </PageLayout>

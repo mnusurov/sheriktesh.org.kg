@@ -18,14 +18,18 @@ const programs = defineCollection({
   })
 })
 
+const documentItem = z.object({
+  pdf: z.string(),
+  cover: z.string().optional(),
+  description: z.string().optional(),
+})
+
 const documents = defineCollection({
   schema: z.object({
     title: z.string(),
     lang: z.enum(['ru', 'en']),
     category: z.enum(['conventions', 'manuals', 'publications']),
-    pdf: z.string(),
-    cover: z.string().optional(),
-    description: z.string().optional(),
+    docs: z.array(documentItem),
   })
 })
 
@@ -33,6 +37,7 @@ const galleries = defineCollection({
   schema: z.object({
     title: z.string(),
     lang: z.enum(['ru', 'en']),
+    order: z.number(),
     date: z.string().optional(),
     images: z.array(z.string()),
   })

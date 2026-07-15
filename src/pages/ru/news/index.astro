@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 export const prerender = true;
@@ -6,22 +7,18 @@ export const prerender = true;
 const lang = 'ru';
 const title = 'Новости';
 const pageTitle = 'Новости';
+
+const news = (await getCollection('news', (n) => n.data.lang === lang))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
-  <p><ul>
-        <li>Конкурс среди СМИ в Жалалабаде, <a href="mediacontest_ru.html">далее...</a></li>
-        <br>
-        <li>Пресс-конференция &quot;Воспитание культуры прав человека в КР&quot;, <a href="pressconf_ru.html">далее...</a></li>
-        <br>
-        <li><a href="../books/hr_pbda.pdf">PBD Association - HR barbeque</a></li>
-        <br>
-        <li>7, 8 апреля 2008 года в Жалалабаде пройдёт ТОТ по правам человека, <a href="totjal_ru.html">далее...</a></li>
-        <br>
-        <li>27, 28 марта 2008 года и Бишкеке пройдёт ТОТ по правам человека, <a href="totbish_ru.html">далее...</a></li>
-        <br>
-        <li>14 февраля 2008 г. в Бишкеке пройдет Национальная конференция по социальному партнёрству, <a href="natconf_ru.html">далее…</a></li><br>
-        <li>В городах Кант и Жалалабат в феврале 2008 года были проведены круглые столы, <a href="roundtab_ru.html">далее...</a></li>
-        </ul>
-        </p>
+  <ul>
+    {news.map((n) => (
+      <li style="margin-bottom: 0.5em;">
+        {n.data.title},
+        <a href={`/ru/news/${n.id.replace(/^(ru|en)-/, '').replace(/\.md$/, '')}/`}>далее...</a>
+      </li>
+    ))}
+  </ul>
 </PageLayout>

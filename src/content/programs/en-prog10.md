@@ -1,5 +1,5 @@
 ---
-title: '"Local Integration Support Program"'
+title: '''Local Integration Support Program'''
 lang: 'en'
 order: 10
 ---

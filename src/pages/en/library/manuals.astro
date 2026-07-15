@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 export const prerender = true;
@@ -6,14 +7,17 @@ export const prerender = true;
 const lang = 'en';
 const title = 'Training Manuals';
 const pageTitle = 'Training Manuals';
+
+const [category] = await getCollection('documents', (d) => d.data.category === 'manuals' && d.data.lang === lang);
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
   <div class="doc-list">
-  <div class="doc-section-heading">Training for Human Rights Trainers. Facilitator's Manual.</div>
-  <div class="doc-item"><a href="../books/CHRF-Manual-Fac-TOT1-English2001.pdf" target="_blank" class="doc-link">Book 1 - PDF 1.47 Mb</a></div>
-  <div class="doc-item"><a href="../books/CHRF-Manual-Fac-TOT2-English2001.pdf" target="_blank" class="doc-link">Book 2 - PDF 1.16 Mb</a></div>
-  <div class="doc-section-heading">Training for Human Rights Trainers. Participant's Manual.</div>
-  <div class="doc-item"><a href="../books/CHRF-Manual-Par-TOT1-English2001.pdf" target="_blank" class="doc-link">Book 1 - PDF 1.29 Mb</a></div>
-  <div class="doc-item"><a href="../books/CHRF-Manual-Par-TOT2-English2001.pdf" target="_blank" class="doc-link">Book 2 - PDF 1.06 Mb</a>
+    {category.data.docs.map((doc) => (
+      <div class="doc-item">
+        {doc.cover && <img class="doc-thumb" src={doc.cover} alt="" />}
+        <a href={`/assets/documents/${doc.pdf}`} target="_blank" class="doc-link">{doc.description}</a>
+      </div>
+    ))}
+  </div>
 </PageLayout>

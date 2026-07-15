@@ -14,6 +14,9 @@
             "en"
           ]
         },
+        "order": {
+          "type": "number"
+        },
         "date": {
           "type": "string"
         },
@@ -30,6 +33,7 @@
       "required": [
         "title",
         "lang",
+        "order",
         "images"
       ],
       "additionalProperties": false

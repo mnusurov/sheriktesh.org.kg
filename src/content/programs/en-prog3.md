@@ -1,5 +1,5 @@
 ---
-title: 'Civic Participation in Discussion of Draft "Amendments and Additions to the Constitution of the KR"'
+title: 'Civic Participation in Discussion of Draft ''Amendments and Additions to the Constitution of the KR'''
 lang: 'en'
 order: 3
 ---

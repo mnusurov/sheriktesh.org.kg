@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 export const prerender = true;
@@ -6,13 +7,17 @@ export const prerender = true;
 const lang = 'ru';
 const title = 'Конвенции';
 const pageTitle = 'Конвенции';
+
+const [category] = await getCollection('documents', (d) => d.data.category === 'conventions' && d.data.lang === lang);
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
   <div class="doc-list">
-  <div class="doc-item"><a href="../books/udhr_ru.pdf" target="_blank" class="doc-link">Всеобщая декларация прав человека - PDF 133 Кб</a></div>
-  <div class="doc-item"><a href="../books/echr_ru.pdf" target="_blank" class="doc-link">Европейская Конвенция о защите прав человека и основных свобод - PDF 221 Кб</a></div>
-  <div class="doc-item"><a href="../books/ecosoc_ru.pdf" target="_blank" class="doc-link">Международный пакт об экономических, социальных и культурных правах - PDF 168 Кб</a></div>
-  <div class="doc-item"><a href="../books/cedaw_ru.pdf" target="_blank" class="doc-link">Конвенция о ликвидации всех форм дискриминации в отношении женщин - PDF 143 Кб</a></div>
-  <div class="doc-item"><a href="../books/crc_ru.pdf" target="_blank" class="doc-link">Конвенция о правах ребенка - PDF 224 Кб</a>
+    {category.data.docs.map((doc) => (
+      <div class="doc-item">
+        {doc.cover && <img class="doc-thumb" src={doc.cover} alt="" />}
+        <a href={`/assets/documents/${doc.pdf}`} target="_blank" class="doc-link">{doc.description}</a>
+      </div>
+    ))}
+  </div>
 </PageLayout>

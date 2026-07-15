@@ -1,0 +1,27 @@
+---
+title: 'Обучающие пособия'
+lang: 'ru'
+category: 'manuals'
+docs:
+  - pdf: 'CHRF-Manual-Fac-TOT1-Russian2001.pdf'
+    description: 'Книга 1 - PDF 1,97 Мб'
+  - pdf: 'CHRF-Manual-Fac-TOT2-Russian2001.pdf'
+    description: 'Книга 2 - PDF 1,36 Мб'
+  - pdf: 'CHRF-Manual-Par-TOT1-Russian2001.pdf'
+    description: 'Книга 1 - PDF 1,62 Мб'
+  - pdf: 'CHRF-Manual-Par-TOT2-Russian2001.pdf'
+    description: 'Книга 2 - PDF 1,24 Мб'
+  - pdf: 'prava_cheloveka.pdf'
+    cover: '/assets/pix/prava_cheloveka.jpg'
+    description: 'А.Азаров, В.Ройтер, К.Хюфнер "Права человека. Международные и российские механизмы защиты" - PDF 1,91 Мб'
+  - pdf: 'alexeev.pdf'
+    cover: '/assets/pix/alexeev.jpg'
+    description: 'Алексеев С.С. "Введение в правоведение" Учебное пособие для школьников (9-11 кл.) - PDF 472 Кб'
+  - pdf: 'hr_conception.pdf'
+    cover: '/assets/pix/hr_conception.jpg'
+    description: 'Марек Новицки "Права человека. Что входит, а что не входит в это понятие?" - PDF 549 Кб'
+  - pdf: 'rights_in_const.pdf'
+    cover: '/assets/pix/rights_in_const.jpg'
+    description: 'Богуслав Банашак "Права личности и механизмы их защиты в конституциях некоторых стран" - PDF 400 Кб'
+---
+

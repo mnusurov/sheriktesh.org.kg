@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 export const prerender = true;
@@ -6,18 +7,17 @@ export const prerender = true;
 const lang = 'ru';
 const title = 'Наши публикации';
 const pageTitle = 'Наши публикации';
+
+const [category] = await getCollection('documents', (d) => d.data.category === 'publications' && d.data.lang === lang);
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
   <div class="doc-list">
-  <div class="doc-item"><img class="doc-thumb" src="../pix/bookcover_ru.jpg" alt=""><a href="../books/casestudy_ru.pdf" target="_blank" class="doc-link">"Опыт Кыргызстана по развитию партнерства между государством и организациями гражданского общества" - PDF 2,71 Мб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/bull1cover_ru.jpg" alt=""><a href="../books/bulletin1_ru.pdf" target="_blank" class="doc-link">ИНФОРМАЦИОННЫЙ БЮЛЛЕТЕНЬ № 1 "Укрепление устойчивого и эффективного сотрудничества между госструктурами и организациями гражданского общества в Кыргызстане" - PDF 511 Кб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/bull2cover_ru.jpg" alt=""><a href="../books/bulletin2_ru.pdf" target="_blank" class="doc-link">ИНФОРМАЦИОННЫЙ БЮЛЛЕТЕНЬ № 2 "Укрепление устойчивого и эффективного сотрудничества между госструктурами и организациями гражданского общества в Кыргызстане" - PDF 1,7 Мб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/bull3cover_ru.jpg" alt=""><a href="../books/bulletin3_ru.pdf" target="_blank" class="doc-link">ИНФОРМАЦИОННЫЙ БЮЛЛЕТЕНЬ № 3 "Укрепление устойчивого и эффективного сотрудничества между госструктурами и организациями гражданского общества в Кыргызстане" - PDF 606 Кб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/bull4cover_ru.jpg" alt=""><a href="../books/bulletin4_ru.pdf" target="_blank" class="doc-link">ИНФОРМАЦИОННЫЙ БЮЛЛЕТЕНЬ № 4 "Укрепление устойчивого и эффективного сотрудничества между госструктурами и организациями гражданского общества в Кыргызстане" - PDF 404 Кб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/natconf_ru.jpg" alt=""><a href="../books/natconf_ru.pdf" target="_blank" class="doc-link">Отчёт по итогам Национальной конференции по социальному партнерству - 2008 - PDF 2,19 Мб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/surveyreport_ru.jpg" alt=""><a href="../books/survey_report.pdf" target="_blank" class="doc-link">Отчёт по результатам исследований по выявлению лиц без граждантва в Ысык-Атинском, Жайылском и Московском районах КР. - PDF 780 Кб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/eu_cover-1.jpg" alt=""><a href="../books/eu_bulletin-1.pdf" target="_blank" class="doc-link">ИНФОРМАЦИОННЫЙ БЮЛЛЕТЕНЬ № 1 "Создание образовательного и правового центров в Чуйской и Жалалабатской областях Кыргызской Республики" - PDF 331 Кб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/eu_cover-2.jpg" alt=""><a href="../books/eu_bulletin-2.pdf" target="_blank" class="doc-link">ИНФОРМАЦИОННЫЙ БЮЛЛЕТЕНЬ № 2 "Создание образовательного и правового центров в Чуйской и Жалалабатской областях Кыргызской Республики" - PDF 350 Кб</a></div>
-  <div class="doc-item"><img class="doc-thumb" src="../pix/eu_cover-3.jpg" alt=""><a href="../books/eu_bulletin-3.pdf" target="_blank" class="doc-link">ИНФОРМАЦИОННЫЙ БЮЛЛЕТЕНЬ № 3 "Создание образовательного и правового центров в Чуйской и Жалалабатской областях Кыргызской Республики" - PDF 472 Кб</a>
+    {category.data.docs.map((doc) => (
+      <div class="doc-item">
+        {doc.cover && <img class="doc-thumb" src={doc.cover} alt="" />}
+        <a href={`/assets/documents/${doc.pdf}`} target="_blank" class="doc-link">{doc.description}</a>
+      </div>
+    ))}
+  </div>
 </PageLayout>
