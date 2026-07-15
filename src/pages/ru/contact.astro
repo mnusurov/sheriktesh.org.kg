@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'ru';
+const title = 'Контакты';
+const pageTitle = 'Контакты';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <h2>Наш адрес</h2>
+  <p>Кыргызская Республика, г. Бишкек<br />
+  ул. Абдрахманова, 204</p>
+
+  <h2>Контактная информация</h2>
+  <p>Телефон: +996 (312) XX-XX-XX<br />
+  Email: info@sheriktesh.org.kg</p>
+
+  <h2>Режим работы</h2>
+  <p>Понедельник — Пятница: 9:00 — 18:00<br />
+  Суббота, Воскресенье: выходной</p>
+</PageLayout>

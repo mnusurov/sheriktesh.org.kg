@@ -1,0 +1,17 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'ToT on Human Rights, Bishkek';
+const pageTitle = 'ToT on Human Rights, Bishkek';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <div class="gallery-grid">
+    <img src="/assets/foto/training1.jpg" alt="Training 1" />
+    <img src="/assets/foto/training2.jpg" alt="Training 2" />
+    <img src="/assets/foto/training3.jpg" alt="Training 3" />
+  </div>
+</PageLayout>

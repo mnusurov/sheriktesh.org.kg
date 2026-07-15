@@ -1,0 +1,27 @@
+---
+export interface Props {
+  lang: 'ru' | 'en';
+  images?: string[];
+}
+
+const { lang, images = [
+  '/assets/foto/wshop-bi1_thumb.jpg',
+  '/assets/foto/agakhan-conf4_thumb.jpg',
+  '/assets/foto/wshop-ja4_thumb.jpg',
+] } = Astro.props;
+
+const maxImages = images.slice(0, 3);
+const galleryLink = lang === 'en' ? '/en/gallery' : '/gallery';
+---
+
+<div class="card">
+  <h3>{lang === 'ru' ? 'Фотогалерея' : 'Photo Gallery'}</h3>
+  {maxImages.map((img) => (
+    <a href={galleryLink}>
+      <img src={img} alt="" style="width:100%;border-radius:4px;margin-bottom:0.75rem;" />
+    </a>
+  ))}
+  <a href={galleryLink} style="display:inline-block;font-weight:600;">
+    {lang === 'ru' ? 'Все фотогалереи →' : 'All galleries →'}
+  </a>
+</div>

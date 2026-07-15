@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'ru';
+const title = 'Фотогалерея';
+const pageTitle = 'Фотогалерея';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p>Фотографии мероприятий и проектов организации.</p>
+
+  <ul>
+    <li><a href="/ru/gallery/1/">Галерея 1: Мероприятия 2023 года</a></li>
+    <li><a href="/ru/gallery/2/">Галерея 2: Тренинги и семинары</a></li>
+    <li><a href="/ru/gallery/3/">Галерея 3: Полевые выезды</a></li>
+    <li><a href="/ru/gallery/4/">Галерея 4: Конференции и круглые столы</a></li>
+    <li><a href="/ru/gallery/5/">Галерея 5: Экологические акции</a></li>
+  </ul>
+</PageLayout>

@@ -1,0 +1,46 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'Publications';
+const pageTitle = 'Publications and Reports';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p>Publications and reports of the organization:</p>
+
+  <ul>
+    <li>
+      <a href="/documents/eu_bulletin-1.pdf" target="_blank">
+        <img src="/assets/pix/eu_cover-1.jpg" alt="EU Bulletin #1" width="100" style="vertical-align: middle; margin-right: 10px;">
+        EU Bulletin #1
+      </a>
+    </li>
+    <li>
+      <a href="/documents/eu_bulletin-2.pdf" target="_blank">
+        <img src="/assets/pix/eu_cover-2.jpg" alt="EU Bulletin #2" width="100" style="vertical-align: middle; margin-right: 10px;">
+        EU Bulletin #2
+      </a>
+    </li>
+    <li>
+      <a href="/documents/eu_bulletin-3.pdf" target="_blank">
+        <img src="/assets/pix/eu_cover-3.jpg" alt="EU Bulletin #3" width="100" style="vertical-align: middle; margin-right: 10px;">
+        EU Bulletin #3
+      </a>
+    </li>
+    <li>
+      <a href="/documents/bulletin1_ru.pdf" target="_blank">
+        <img src="/assets/pix/bull1cover_en.jpg" alt="Bulletin #1" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Bulletin #1
+      </a>
+    </li>
+    <li>
+      <a href="/documents/survey_report.pdf" target="_blank">
+        <img src="/assets/pix/surveyreport_ru.jpg" alt="Survey Report" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Survey Report
+      </a>
+    </li>
+  </ul>
+</PageLayout>

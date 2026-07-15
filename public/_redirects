@@ -1,0 +1,78 @@
+# Static pages
+/index.html                              /ru
+/html/mission_ru.html                    /ru/about/mission
+/html/mission_en.html                    /en/about/mission
+/html/history_ru.html                    /ru/about/history
+/html/history_en.html                    /en/about/history
+/html/structure_ru.html                  /ru/about/structure
+/html/structure_en.html                  /en/about/structure
+/html/staff_ru.html                      /ru/about/staff
+/html/staff_en.html                      /en/about/staff
+/html/address_ru.html                    /ru/contact
+/html/address_en.html                    /en/contact
+
+# News
+/html/news_ru.html                       /ru/news
+/html/news_en.html                       /en/news
+/html/mediacontest_ru.html               /ru/news/mediacontest
+/html/pressconf_ru.html                  /ru/news/pressconf
+/html/totjal_ru.html                     /ru/news/totjal
+/html/totbish_ru.html                    /ru/news/totbish
+/html/natconf_ru.html                    /ru/news/natconf
+/html/roundtab_ru.html                   /ru/news/roundtab
+
+# Programs RU
+/html/prog1_ru.html                      /ru/programs/prog1
+/html/prog2_ru.html                      /ru/programs/prog2
+/html/prog3_ru.html                      /ru/programs/prog3
+/html/prog4_ru.html                      /ru/programs/prog4
+/html/prog5_ru.html                      /ru/programs/prog5
+/html/prog6_ru.html                      /ru/programs/prog6
+/html/prog7_ru.html                      /ru/programs/prog7
+/html/prog8_ru.html                      /ru/programs/prog8
+/html/prog9_ru.html                      /ru/programs/prog9
+/html/prog10_ru.html                     /ru/programs/prog10
+/html/prog11_ru.html                     /ru/programs/prog11
+/html/prog12_ru.html                     /ru/programs/prog12
+/html/prog13_ru.html                     /ru/programs/prog13
+
+# Programs EN
+/html/prog1_en.html                      /en/programs/prog1
+/html/prog2_en.html                      /en/programs/prog2
+/html/prog3_en.html                      /en/programs/prog3
+/html/prog4_en.html                      /en/programs/prog4
+/html/prog5_en.html                      /en/programs/prog5
+/html/prog6_en.html                      /en/programs/prog6
+/html/prog7_en.html                      /en/programs/prog7
+/html/prog8_en.html                      /en/programs/prog8
+/html/prog9_en.html                      /en/programs/prog9
+/html/prog10_en.html                     /en/programs/prog10
+/html/prog11_en.html                     /en/programs/prog11
+/html/prog12_en.html                     /en/programs/prog12
+/html/prog13_en.html                     /en/programs/prog13
+
+# Library
+/html/conventions_ru.html                /ru/library/conventions
+/html/manuals_ru.html                    /ru/library/manuals
+/html/publications_ru.html               /ru/library/publications
+
+# Galleries RU
+/html/gallery1_ru.html                   /ru/gallery/1
+/html/gallery2_ru.html                   /ru/gallery/2
+/html/gallery3_ru.html                   /ru/gallery/3
+/html/gallery4_ru.html                   /ru/gallery/4
+/html/gallery5_ru.html                   /ru/gallery/5
+
+# Galleries EN
+/html/gallery1_en.html                   /en/gallery/1
+/html/gallery2_en.html                   /en/gallery/2
+/html/gallery3_en.html                   /en/gallery/3
+/html/gallery4_en.html                   /en/gallery/4
+/html/gallery5_en.html                   /en/gallery/5
+
+# Assets
+/pix/*                                   /assets/pix/:splat            301
+/foto/*                                  /assets/foto/:splat           301
+/books/*                                 /documents/:splat             301
+/favicon.ico                             /favicon.ico                  301
+/html/style.css                          /styles/global.css            301

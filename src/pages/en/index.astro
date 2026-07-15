@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SidebarWidget from '../../components/SidebarWidget.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'Home';
+---
+
+<BaseLayout title={title} lang={lang}>
+  <main class="content">
+    <div class="container">
+      <div class="content-wrap">
+        <div class="content-main">
+          <section class="hero">
+            <h1>Public Association «Counterpart-Sheriktesh»</h1>
+            <p class="hero-subtitle">Strengthening civil society and protecting human rights in Kyrgyzstan</p>
+          </section>
+
+          <section class="about-section">
+            <h2>About Us</h2>
+            <p>The Public Association «Counterpart-Sheriktesh» was founded in January 2002. The organization works in the field of strengthening civil society, protecting human rights and democratic development of the Kyrgyz Republic.</p>
+            <p>Our mission is to promote the building of a democratic, legal state, develop civil society institutions, protect human and civil rights and freedoms.</p>
+            <p>Over the years, we have implemented dozens of projects aimed at monitoring human rights, legal education of the population, community development and strengthening democratic institutions.</p>
+          </section>
+
+          <section class="activities-section">
+            <h2>Main Activities</h2>
+            <ul>
+              <li>Human rights monitoring</li>
+              <li>Legal education and awareness</li>
+              <li>Civil society development</li>
+              <li>Protection of vulnerable groups</li>
+              <li>Environmental monitoring and protection</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="content-sidebar">
+          <SidebarWidget lang={lang} />
+        </aside>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

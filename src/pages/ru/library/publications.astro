@@ -1,0 +1,58 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'ru';
+const title = 'Публикации';
+const pageTitle = 'Публикации и отчеты';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p>Публикации и отчеты организации:</p>
+
+  <ul>
+    <li>
+      <a href="/documents/bulletin1_ru.pdf" target="_blank">
+        <img src="/assets/pix/bull1cover_ru.jpg" alt="Бюллетень №1" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Бюллетень №1
+      </a>
+    </li>
+    <li>
+      <a href="/documents/bulletin2_ru.pdf" target="_blank">
+        <img src="/assets/pix/bull2cover_ru.jpg" alt="Бюллетень №2" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Бюллетень №2
+      </a>
+    </li>
+    <li>
+      <a href="/documents/bulletin3_ru.pdf" target="_blank">
+        <img src="/assets/pix/bull3cover_ru.jpg" alt="Бюллетень №3" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Бюллетень №3
+      </a>
+    </li>
+    <li>
+      <a href="/documents/bulletin4_ru.pdf" target="_blank">
+        <img src="/assets/pix/bull4cover_ru.jpg" alt="Бюллетень №4" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Бюллетень №4
+      </a>
+    </li>
+    <li>
+      <a href="/documents/natconf_ru.pdf" target="_blank">
+        <img src="/assets/pix/natconf_ru.jpg" alt="Материалы национальной конференции" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Материалы национальной конференции
+      </a>
+    </li>
+    <li>
+      <a href="/documents/survey_report.pdf" target="_blank">
+        <img src="/assets/pix/surveyreport_ru.jpg" alt="Отчет по результатам исследования" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Отчет по результатам исследования
+      </a>
+    </li>
+    <li>
+      <a href="/documents/hr_pbda.pdf" target="_blank">
+        <img src="/assets/pix/bookcover_ru.jpg" alt="Права человека и бюджетный процесс" width="100" style="vertical-align: middle; margin-right: 10px;">
+        Права человека и бюджетный процесс
+      </a>
+    </li>
+  </ul>
+</PageLayout>

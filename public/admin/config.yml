@@ -1,0 +1,98 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: sheriktesh.org.kg
+  branch: main
+  base_url: https://decap.sheriktesh.org.kg
+  auth_endpoint: /auth
+
+i18n:
+  structure: multiple_folders
+  locales: [ru, en]
+  default_locale: ru
+
+media_folder: public/assets
+public_folder: /assets
+
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/content/pages
+    i18n: true
+    create: true
+    delete: true
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Body, name: body, widget: markdown, i18n: true }
+
+  - name: news
+    label: News
+    label_singular: News item
+    folder: src/content/news
+    i18n: true
+    create: true
+    delete: true
+    slug: '{{slug}}-{{locale}}'
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Lang, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Date, name: date, widget: datetime, i18n: false }
+      - { label: Image, name: image, widget: image, required: false, i18n: false }
+      - { label: Author, name: author, widget: string, required: false, i18n: true }
+      - { label: Body, name: body, widget: markdown, i18n: true }
+
+  - name: programs
+    label: Programs
+    label_singular: Program
+    folder: src/content/programs
+    i18n: true
+    create: true
+    delete: true
+    slug: '{{slug}}-{{locale}}'
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Lang, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Order, name: order, widget: number, i18n: false }
+      - { label: Body, name: body, widget: markdown, i18n: true }
+
+  - name: documents
+    label: Documents
+    label_singular: Document
+    folder: src/content/library
+    i18n: true
+    create: true
+    delete: true
+    slug: '{{slug}}-{{locale}}'
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Lang, name: lang, widget: select, options: [ru, en], i18n: false }
+      - {
+          label: Category,
+          name: category,
+          widget: select,
+          options:
+            - { label: Conventions, value: conventions }
+            - { label: Manuals, value: manuals }
+            - { label: Publications, value: publications },
+          i18n: false
+        }
+      - { label: PDF, name: pdf, widget: file, i18n: false }
+      - { label: Cover, name: cover, widget: image, required: false, i18n: false }
+      - { label: Description, name: description, widget: text, required: false, i18n: true }
+
+  - name: galleries
+    label: Galleries
+    label_singular: Gallery
+    folder: src/content/galleries
+    i18n: true
+    create: true
+    delete: true
+    slug: '{{slug}}-{{locale}}'
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Lang, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Date, name: date, widget: datetime, required: false, i18n: false }
+      - { label: Images, name: images, widget: list, field: { label: Image, name: image, widget: image }, i18n: false }
+      - { label: Body, name: body, widget: markdown, required: false, i18n: true }

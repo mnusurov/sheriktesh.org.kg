@@ -1,0 +1,17 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'ru';
+const title = 'ToT по правам человека, Жалалабат';
+const pageTitle = 'ToT по правам человека, Жалалабат';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <div class="gallery-grid">
+    <img src="/assets/foto/field1.jpg" alt="Полевой выезд 1" />
+    <img src="/assets/foto/field2.jpg" alt="Полевой выезд 2" />
+    <img src="/assets/foto/field3.jpg" alt="Полевой выезд 3" />
+  </div>
+</PageLayout>

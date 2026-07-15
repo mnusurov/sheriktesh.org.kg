@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'ru';
+const title = 'Учебные пособия';
+const pageTitle = 'Учебные пособия и методические материалы';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p>Учебные пособия и методические материалы, разработанные организацией:</p>
+
+  <ul>
+    <li><a href="/documents/CHRF-Manual-Fac-TOT1-Russian2001.pdf" target="_blank">Руководство по проведению тренингов для тренеров (часть 1)</a> (PDF)</li>
+    <li><a href="/documents/CHRF-Manual-Fac-TOT2-Russian2001.pdf" target="_blank">Руководство по проведению тренингов для тренеров (часть 2)</a> (PDF)</li>
+    <li><a href="/documents/CHRF-Manual-Par-TOT1-Russian2001.pdf" target="_blank">Руководство участника тренинга для тренеров (часть 1)</a> (PDF)</li>
+    <li><a href="/documents/CHRF-Manual-Par-TOT2-Russian2001.pdf" target="_blank">Руководство участника тренинга для тренеров (часть 2)</a> (PDF)</li>
+    <li><a href="/documents/prava_cheloveka.pdf" target="_blank">Права человека</a> (PDF)</li>
+    <li><a href="/documents/alexeev.pdf" target="_blank">Алексеев С.С. — Теория права</a> (PDF)</li>
+    <li><a href="/documents/hr_conception.pdf" target="_blank">Концепция прав человека</a> (PDF)</li>
+    <li><a href="/documents/rights_in_const.pdf" target="_blank">Права человека в конституции</a> (PDF)</li>
+    <li><a href="/documents/international_hr.pdf" target="_blank">Международные механизмы защиты прав человека</a> (PDF)</li>
+    <li><a href="/documents/casestudy_ru.pdf" target="_blank">Сборник практических ситуаций по правам человека</a> (PDF)</li>
+    <li><a href="/documents/bulletin1_ru.pdf" target="_blank">Бюллетень №1</a> (PDF)</li>
+    <li><a href="/documents/bulletin2_ru.pdf" target="_blank">Бюллетень №2</a> (PDF)</li>
+    <li><a href="/documents/bulletin3_ru.pdf" target="_blank">Бюллетень №3</a> (PDF)</li>
+    <li><a href="/documents/bulletin4_ru.pdf" target="_blank">Бюллетень №4</a> (PDF)</li>
+    <li><a href="/documents/natconf_ru.pdf" target="_blank">Материалы национальной конференции</a> (PDF)</li>
+    <li><a href="/documents/survey_report.pdf" target="_blank">Отчет по результатам исследования</a> (PDF)</li>
+    <li><a href="/documents/hr_pbda.pdf" target="_blank">Права человека и бюджетный процесс</a> (PDF)</li>
+  </ul>
+</PageLayout>

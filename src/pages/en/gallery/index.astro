@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'Photo Gallery';
+const pageTitle = 'Photo Gallery';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p>Photos of the organization's events and projects.</p>
+
+  <ul>
+    <li><a href="/en/gallery/1/">Gallery 1: Events 2023</a></li>
+    <li><a href="/en/gallery/2/">Gallery 2: Trainings and Seminars</a></li>
+    <li><a href="/en/gallery/3/">Gallery 3: Field Visits</a></li>
+    <li><a href="/en/gallery/4/">Gallery 4: Conferences and Round Tables</a></li>
+    <li><a href="/en/gallery/5/">Gallery 5: Environmental Actions</a></li>
+  </ul>
+</PageLayout>

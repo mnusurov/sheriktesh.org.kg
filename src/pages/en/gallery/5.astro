@@ -1,0 +1,17 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'AKDN Project Working Group Meeting';
+const pageTitle = 'AKDN Project Working Group Meeting';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <div class="gallery-grid">
+    <img src="/assets/foto/eco1.jpg" alt="Environmental action 1" />
+    <img src="/assets/foto/eco2.jpg" alt="Environmental action 2" />
+    <img src="/assets/foto/eco3.jpg" alt="Environmental action 3" />
+  </div>
+</PageLayout>

@@ -1,0 +1,11 @@
+---
+export interface Props {
+  lang: 'ru' | 'en';
+  href: string;
+}
+
+const { lang, href } = Astro.props;
+const label = lang === 'ru' ? 'EN' : 'RU';
+---
+
+<a href={href} class="lang-switch">{label}</a>

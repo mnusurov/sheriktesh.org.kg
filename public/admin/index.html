@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counterpart-Sheriktesh — CMS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .login-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      padding: 48px 40px 40px;
+      text-align: center;
+      max-width: 380px;
+      width: 90%;
+    }
+    .login-card img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 16px;
+    }
+    .login-card h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin: 0 0 4px;
+    }
+    .login-card p {
+      font-size: 0.875rem;
+      color: #666;
+      margin: 0 0 32px;
+    }
+    .login-card button {
+      background: #24292e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .login-card button:hover {
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <img src="/assets/pix/logo.gif" alt="Counterpart-Sheriktesh" />
+    <h1>Counterpart-Sheriktesh</h1>
+    <p>Sign in to manage the website</p>
+    <button onclick="window.location.href = window.location.origin + '/admin/index.html'">Sign in with GitHub</button>
+  </div>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    const CMS = window.CMS || {}
+    CMS.init = CMS.init || function(){}
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function(user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function() {
+            document.location.href = '/admin/'
+          })
+        }
+      })
+    }
+  </script>
+</body>
+</html>

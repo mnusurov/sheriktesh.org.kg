@@ -1,0 +1,31 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'Structure';
+const pageTitle = 'Organizational Structure';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p>The Public Association «Counterpart-Sheriktesh» has the following organizational structure:</p>
+
+  <h2>General Meeting of Members</h2>
+  <p>The highest governing body of the organization. Meets at least once a year to approve strategic directions, elect governing bodies and approve reports.</p>
+
+  <h2>Board</h2>
+  <p>A collegial management body that provides general guidance of the organization's activities between general meetings. Determines priority areas of work, approves projects and monitors their implementation.</p>
+
+  <h2>Executive Director</h2>
+  <p>Provides operational management of the organization, coordinates staff work, represents the organization in relations with state bodies, partners and the public.</p>
+
+  <h2>Program Departments</h2>
+  <ul>
+    <li>Human Rights Monitoring Department</li>
+    <li>Legal Education Department</li>
+    <li>Community Development Department</li>
+    <li>Environmental Department</li>
+    <li>Information and Analysis Department</li>
+  </ul>
+</PageLayout>

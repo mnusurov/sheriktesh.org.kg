@@ -1,0 +1,40 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'ru';
+const title = 'Новости';
+const pageTitle = 'Новости';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p>Последние новости и события из жизни организации.</p>
+
+  <ul class="news-list">
+    <li>
+      <a href="/ru/news/mediacontest/">Медиа-конкурс среди журналистов</a>
+      <p>Конкурс на лучшее освещение правозащитной тематики в СМИ.</p>
+    </li>
+    <li>
+      <a href="/ru/news/pressconf/">Пресс-конференция</a>
+      <p>Пресс-конференция по итогам мониторинга прав человека.</p>
+    </li>
+    <li>
+      <a href="/ru/news/totjal/">ТОТ Жалалабад</a>
+      <p>Тренинг для тренеров в городе Жалалабад.</p>
+    </li>
+    <li>
+      <a href="/ru/news/totbish/">ТОТ Бишкек</a>
+      <p>Тренинг для тренеров в городе Бишкек.</p>
+    </li>
+    <li>
+      <a href="/ru/news/natconf/">Национальная конференция</a>
+      <p>Национальная конференция по вопросам прав человека.</p>
+    </li>
+    <li>
+      <a href="/ru/news/roundtab/">Круглые столы</a>
+      <p>Серия круглых столов по актуальным вопросам развития гражданского общества.</p>
+    </li>
+  </ul>
+</PageLayout>

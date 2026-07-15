@@ -1,0 +1,48 @@
+{
+  "$ref": "#/definitions/documents",
+  "definitions": {
+    "documents": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string",
+          "enum": [
+            "ru",
+            "en"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "conventions",
+            "manuals",
+            "publications"
+          ]
+        },
+        "pdf": {
+          "type": "string"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "lang",
+        "category",
+        "pdf"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,17 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'ru';
+const title = 'Заседание рабочей группы по проекту АКДН';
+const pageTitle = 'Заседание рабочей группы по проекту АКДН';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <div class="gallery-grid">
+    <img src="/assets/foto/eco1.jpg" alt="Экологическая акция 1" />
+    <img src="/assets/foto/eco2.jpg" alt="Экологическая акция 2" />
+    <img src="/assets/foto/eco3.jpg" alt="Экологическая акция 3" />
+  </div>
+</PageLayout>

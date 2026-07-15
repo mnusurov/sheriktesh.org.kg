@@ -1,0 +1,93 @@
+---
+export interface Props {
+  lang: 'ru' | 'en';
+  currentPath?: string;
+}
+
+const { lang, currentPath = '' } = Astro.props;
+const p = lang === 'en' ? '/en' : '';
+
+const label = (ru: string, en: string) => lang === 'ru' ? ru : en;
+
+const programs = [
+  [1, 'Мониторинг программы "Всемирное питание"', '"Global Nutrition Program" Monitoring'],
+  [2, 'Предоставление и оплата социальных услуг', 'Delivery and Funding of Social Services'],
+  [3, 'Участие общественности в обсуждении проекта "Исправления и добавления в Конституцию КР"', 'Civic Participation in Discussion of Draft "Amendments and Additions to the Constitution of the KR"'],
+  [4, 'Сеть по усилению общин', 'Community Empowerment Network'],
+  [5, 'Развитие санитарии и гигиены в удалённых районах', 'Developing Sanitary and Hygiene in Rural Areas'],
+  [6, 'Обеспечение участия общественности в принятии решений на местном уровне', 'Ensuring Public Participation on Local Level'],
+  [7, 'Участие общественности в трансграничном управлении водными ресурсами рек Талас и Чуй', 'Public Participation in Transboundary Water Management of Talas and Chu Rivers'],
+  [8, 'Критический анализ механизмов отчётности в Восточной Европе и Центральной Азии', 'Stock Taking of Accountability Mechanisms in Eastern Europe and Central Asia'],
+  [9, 'Усиление эффективного сотрудничества между правительством и общественными организациями в Кыргызстане (1 стадия)', 'Fostering Strong and Effective Collaboration Between Government and CSOs in Kyrgyzstan (1st stage)'],
+  [10, 'Программа поддержки местной интеграции', 'Local Integration Support Program'],
+  [11, 'Организация образовательного и юридического центров в Чуйской и Жалалабатской областях КР', 'Establishment of the Educational and Legal Centres in Chui and Jalalabat Oblasts of the KR'],
+  [12, 'Усиление эффективного сотрудничества между правительством и общественными организациями в Кыргызстане (2 стадия)', 'Effective Collaboration Between Government and CSO in Kyrgyzstan (2nd Stage)'],
+  [13, 'Поддержка женщин-беженок', 'Support to Refugee Women'],
+]
+---
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href={p || '/'} class="logo">
+        <img src="/assets/pix/logo.gif" alt="Counterpart-Sheriktesh" />
+        <span>Каунтерпарт-Шериктеш</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav" id="main-nav">
+        <a href={p || '/'}>{label('Главная', 'Home')}</a>
+        <div class="dropdown">
+          <a href={`${p}/about/mission`}>{label('О нас', 'About us')}</a>
+          <div class="dropdown-content">
+            <a href={`${p}/about/history`}>{label('История', 'History')}</a>
+            <a href={`${p}/about/structure`}>{label('Структура', 'Structure')}</a>
+            <a href={`${p}/about/staff`}>{label('Штат', 'Staff')}</a>
+          </div>
+        </div>
+        <a href={`${p}/news`}>{label('Новости', 'News')}</a>
+        <div class="dropdown">
+          <a href={`${p}/programs`}>{label('Программы', 'Programs')}</a>
+          <div class="dropdown-content">
+            {programs.map(([id, ru, en]) => (
+              <a href={`${p}/programs/prog${id}`}>{label(ru, en)}</a>
+            ))}
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href={`${p}/library/conventions`}>{label('Библиотека', 'Library')}</a>
+          <div class="dropdown-content">
+            <a href={`${p}/library/conventions`}>{label('Конвенции', 'Conventions')}</a>
+            <a href={`${p}/library/manuals`}>{label('Обучающие пособия', 'Training Manuals')}</a>
+            <a href={`${p}/library/publications`}>{label('Наши публикации', 'Our Publications')}</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href={`${p}/gallery`}>{label('Фотогалереи', 'Gallery')}</a>
+          <div class="dropdown-content">
+            <a href={`${p}/gallery/1`}>{label('Национальная конференция по социальному партнёрству', 'National Conference on Social Partnership')}</a>
+            <a href={`${p}/gallery/2`}>{label('ToT по правам человека, Бишкек', 'ToT on Human Rights, Bishkek')}</a>
+            <a href={`${p}/gallery/3`}>{label('ToT по правам человека, Жалалабат', 'ToT on Human Rights, Jalalabat')}</a>
+            <a href={`${p}/gallery/4`}>{label('Заключительный круглый стол по проекту АКДН', 'Final Round Table on AKDN Project')}</a>
+            <a href={`${p}/gallery/5`}>{label('Заседание рабочей группы по проекту АКДН', 'AKDN Project Working Group Meeting')}</a>
+          </div>
+        </div>
+        <a href={`${p}/contact`}>{label('Контакты', 'Contacts')}</a>
+        <a href={lang === 'ru' ? `/en${currentPath.replace(/^\/ru/, '') || '/'}` : currentPath.replace(/^\/en/, '') || '/'} class="lang-switch">
+          {lang === 'ru' ? 'EN' : 'RU'}
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+    }
+  });
+</script>

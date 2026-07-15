@@ -1,0 +1,34 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SidebarWidget from '../components/SidebarWidget.astro';
+
+export interface Props {
+  title: string;
+  lang: 'ru' | 'en';
+  pageTitle: string;
+}
+
+const { title, lang, pageTitle } = Astro.props;
+---
+
+<BaseLayout title={title} lang={lang}>
+  <div class="page-title">
+    <div class="container">
+      <h1>{pageTitle}</h1>
+    </div>
+  </div>
+  <main class="content">
+    <div class="container">
+      <div class="content-wrap">
+        <div class="content-main">
+          <div class="content-inner">
+            <slot />
+          </div>
+        </div>
+        <aside class="content-sidebar">
+          <SidebarWidget lang={lang} />
+        </aside>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

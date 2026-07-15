@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'Contacts';
+const pageTitle = 'Contacts';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <h2>Our Address</h2>
+  <p>Kyrgyz Republic, Bishkek<br />
+  204 Abdrakhmanova Street</p>
+
+  <h2>Contact Information</h2>
+  <p>Phone: +996 (312) XX-XX-XX<br />
+  Email: info@sheriktesh.org.kg</p>
+
+  <h2>Working Hours</h2>
+  <p>Monday — Friday: 9:00 — 18:00<br />
+  Saturday, Sunday: closed</p>
+</PageLayout>

@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export const prerender = true;
+
+const lang = 'en';
+const title = 'National Conference';
+const pageTitle = 'National Conference on Human Rights';
+---
+
+<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+  <p><strong>Date:</strong> 2024</p>
+  <p>The Public Association «Counterpart-Sheriktesh» organized a National Conference on human rights issues in the Kyrgyz Republic.</p>
+  <p>The conference brought together representatives of state bodies, international organizations, non-governmental organizations, academia and media to discuss current human rights issues.</p>
+  <p>The conference discussed the following topics:</p>
+  <ul>
+    <li>Human rights situation in Kyrgyzstan</li>
+    <li>Role of civil society in human rights protection</li>
+    <li>International standards and national legislation</li>
+    <li>Rights of vulnerable groups</li>
+  </ul>
+</PageLayout>

@@ -1,0 +1,26 @@
+---
+export interface Props {
+  lang: 'ru' | 'en';
+}
+
+const { lang } = Astro.props;
+---
+
+<footer>
+  <div class="container">
+    <p>
+      {lang === 'ru'
+        ? 'При поддержке'
+        : 'Supported by'}{' '}
+      <a href="https://www.akdn.org" target="_blank" rel="noopener noreferrer">
+        Aga Khan Development Network
+      </a>
+    </p>
+    <p>
+      &copy;{' '}
+      {lang === 'ru'
+        ? 'ОО "Каунтерпарт-Шериктеш"'
+        : 'Counterpart-Sheriktesh'}
+    </p>
+  </div>
+</footer>
