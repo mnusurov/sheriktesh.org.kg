@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 export const prerender = true;
@@ -6,24 +7,17 @@ export const prerender = true;
 const lang = 'ru';
 const title = 'Программы';
 const pageTitle = 'Программы и проекты';
+
+const programs = (await getCollection('programs', (p) => p.data.lang === lang))
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle}>
   <p>Общественное объединение «Каунтерпарт-Шериктеш» реализует следующие программы и проекты:</p>
 
   <ul>
-    <li><a href="/ru/programs/prog1/">Мониторинг программы &laquo;Всемирное питание&raquo;</a></li>
-    <li><a href="/ru/programs/prog2/">Предоставление и оплата социальных услуг</a></li>
-    <li><a href="/ru/programs/prog3/">Участие общественности в обсуждении проекта &laquo;Исправления и добавления в Конституцию КР&raquo;</a></li>
-    <li><a href="/ru/programs/prog4/">Сеть по усилению общин</a></li>
-    <li><a href="/ru/programs/prog5/">Развитие санитарии и гигиены в удалённых районах</a></li>
-    <li><a href="/ru/programs/prog6/">Обеспечение участия общественности в принятии решений на местном уровне</a></li>
-    <li><a href="/ru/programs/prog7/">Участие общественности в трансграничном управлении водными ресурсами рек Талас и Чуй</a></li>
-    <li><a href="/ru/programs/prog8/">Критический анализ механизмов отчётности в Восточной Европе и Центральной Азии</a></li>
-    <li><a href="/ru/programs/prog9/">Усиление эффективного сотрудничества между правительством и общественными организациями в Кыргызстане (1 стадия)</a></li>
-    <li><a href="/ru/programs/prog10/">Программа поддержки местной интеграции</a></li>
-    <li><a href="/ru/programs/prog11/">Организация образовательного и юридического центров в Чуйской и Жалалабатской областях КР</a></li>
-    <li><a href="/ru/programs/prog12/">Усиление эффективного сотрудничества между правительством и общественными организациями в Кыргызстане (2 стадия)</a></li>
-    <li><a href="/ru/programs/prog13/">Поддержка женщин-беженок</a></li>
+    {programs.map((p) => (
+      <li><a href={`/ru/programs/prog${p.data.order}/`}>{p.data.title}</a></li>
+    ))}
   </ul>
 </PageLayout>

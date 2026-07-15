@@ -1,0 +1,15 @@
+---
+title: 'Public Participation in Transboundary Water Management of Talas and Chu Rivers'
+lang: 'en'
+order: 7
+---
+
+<p>The overall project goal is to promote public participation in the decision making on issues of management of transboundary waters of Rivers Chu and Talas.<br> 
+The project objectives are to<br> <strong>a)</strong> identify major stakeholders in the transboundary water region on the issues of transboundary water management of Talas and Chu rivers;<br> <strong>b)</strong> based on the identification, to assist the stakeholders in the communication with each other and in raising their capacity for becoming involved in the discussion of transboundary water management issues with the water authorities in both Republics of Kazakhstan and Kyrgyzstan;<br> <strong>c)</strong> to promote awareness of the Commission and water authorities in Kyrgyzstan and Kazakhstan about interests and needs of the local stakeholders concerning water management in the region;<br> <strong>d)</strong> through regular consultations with the water authorities in the two countries, to establish a procedure for the involvement of stakeholders in the process of preparation and implementation of water management decisions and activities in the Chu and Talas rivers transboundary area and for the regular communication and when necessary cooperation between the authorities and the stakeholders.
+</p>
+      <p><strong>Type of services provided:</strong><ul>
+      <li>Preparation and editing of the database/directory of local stakeholders</li>
+		<li>Identification of needs of stakeholders and organization of regional stakeholders’ meetings</li>
+        <li>Training and capacity building of local stakeholders and the Kyrgyz-Kazakh Commission members</li>
+        </ul>
+</p>
