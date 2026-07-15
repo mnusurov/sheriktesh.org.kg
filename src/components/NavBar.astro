@@ -5,7 +5,7 @@ export interface Props {
 }
 
 const { lang, currentPath = '' } = Astro.props;
-const p = lang === 'en' ? '/en' : '';
+const p = lang === 'ru' ? '/ru' : '/en';
 
 const label = (ru: string, en: string) => lang === 'ru' ? ru : en;
 
@@ -78,7 +78,7 @@ const programs = [
           </div>
         </div>
         <a href={`${p}/contact`}>{label('Контакты', 'Contacts')}</a>
-        <a href={lang === 'ru' ? `/en${currentPath.replace(/^\/ru/, '') || '/'}` : currentPath.replace(/^\/en/, '') || '/'} class="lang-switch">
+        <a href={lang === 'ru' ? `/en${currentPath.replace(/^\/ru/, '') || '/'}` : `/ru${currentPath.replace(/^\/en/, '') || '/'}`} class="lang-switch">
           {lang === 'ru' ? 'EN' : 'RU'}
         </a>
       </nav>
