@@ -5,7 +5,7 @@ date: '2008-07-01'
 ---
 
 <p><strong>Mass-Media Contest in Jalalabat</strong></p>
-          <p>In August-July &quot;Women – Leaders of Jalalabat&quot; Association conducted a contest among mass-media of Jalalabat province within the framework of advocacy campaign &quot;Fostering of Human Rights Culture in KR&quot; The contest was announced on a <a href="pressconf_en.html">press-conference</a> and through province mass-media centre and newspapers.</p>
+          <p>In August-July &quot;Women – Leaders of Jalalabat&quot; Association conducted a contest among mass-media of Jalalabat province within the framework of advocacy campaign &quot;Fostering of Human Rights Culture in KR&quot; The contest was announced on a <a href="/en/news/pressconf/">press-conference</a> and through province mass-media centre and newspapers.</p>
           <p><strong>The aim of the contest: Attraction of public attention to the problem of human trafficking, detection of law violation facts.</strong></p>
           <p>During the conference term there were many mass-media representatives and Jalalabat citizens, who were calling and coming to the office, to learn about the centre and women rights violations to participate in the contest.</p>
           <p>As a result of the contest we have got articles on problems of human trafficking in Kyrgyz, Uzbek and Russian languages. Local newspapers &quot;Akyikat&quot;, &quot;Jalalabat Tongi&quot;, &quot;Besplatnaya Gazeta&quot;, TV KRT (a short film about information meeting), ELTR (2 talk-shows), AKIpress participated in the contest.</p>

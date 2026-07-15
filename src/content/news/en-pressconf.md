@@ -6,7 +6,7 @@ date: '2008-07-16'
 
 <p><strong>Press-conference &quot;Fostering of Human Rights Culture in KR&quot;</strong></p>
           <p>On July 16, 2008 &quot;Women – Leaders of Jalalabar&quot; Association organized a press-conference &quot;Fostering of Culture and Human Rights in KR&quot; in training-hall of Centre of Education of Adults.</p>
-          <p>The press-conference was conducted within the framework of advocacy-campaign on the project &quot;<a href="prog11_en.html">Establishment of the Educational and Legal Centres in Chui and Jalalabat Oblasts of the Kyrgyz Republic</a>&quot;, supported by European Comission and implemented by three partner organizations: Counterpart-Sheriktesh, &quot;Women – Leaders of Jalalabar&quot; Association and &quot;Elsen&quot;.</p>
+          <p>The press-conference was conducted within the framework of advocacy-campaign on the project &quot;<a href="/en/programs/prog11/">Establishment of the Educational and Legal Centres in Chui and Jalalabat Oblasts of the Kyrgyz Republic</a>&quot;, supported by European Comission and implemented by three partner organizations: Counterpart-Sheriktesh, &quot;Women – Leaders of Jalalabar&quot; Association and &quot;Elsen&quot;.</p>
           <p><strong>Aims of the press-conference:</strong>
           <ol>
           <li>Improvement of awareness of Jalalabat province population on human trafficking problem.</li>
