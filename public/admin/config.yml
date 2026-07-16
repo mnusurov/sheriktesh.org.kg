@@ -92,7 +92,7 @@ collections:
 
   - name: about
     label: О нас
-    label_singular: Страница
+    label_singular: Запись
     folder: src/content/about
     i18n: true
     create: true
