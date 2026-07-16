@@ -4,11 +4,10 @@ lang: 'en'
 order: 12
 ---
 
-<p>The goal of the proposal is to foster a strong and effective collaboration between government and civil society organizations in addressing social and economic problems in Kyrgyzstan through disseminating and using best practices, achievements and strengths in cooperative work of civil society institutions with government, creation and capacity building of working group for development of new more effective relationship and new cooperative mechanisms, principles and tools which will be introduced at the level of government and parliament.</p>
-      <p><strong>Type of services provided:</strong></p>
-      <ul>
-      <li>Dissemination and using best practices, achievements and strengths in cooperative work of civil society institutions with government through demonstrating samples of successful collaboration and identifying structural barriers and causes of confined partnership, which need to be eliminated</li>
-      <li>Creation and capacity building of working group consisted of representatives of government and civil society for development of new more effective working relationship which will be guided by CSOs and Ministries</li>
-      <li>Conduct advocacy campaign including lobbying mechanisms for promoting new cooperative approaches, principles and tools, which will be introduced conjointly at the level of government and parliament</li>
-      </ul>
-</p>
+The goal of the proposal is to foster a strong and effective collaboration between government and civil society organizations in addressing social and economic problems in Kyrgyzstan through disseminating and using best practices, achievements and strengths in cooperative work of civil society institutions with government, creation and capacity building of working group for development of new more effective relationship and new cooperative mechanisms, principles and tools which will be introduced at the level of government and parliament.
+
+**Type of services provided:**
+
+-   Dissemination and using best practices, achievements and strengths in cooperative work of civil society institutions with government through demonstrating samples of successful collaboration and identifying structural barriers and causes of confined partnership, which need to be eliminated
+-   Creation and capacity building of working group consisted of representatives of government and civil society for development of new more effective working relationship which will be guided by CSOs and Ministries
+-   Conduct advocacy campaign including lobbying mechanisms for promoting new cooperative approaches, principles and tools, which will be introduced conjointly at the level of government and parliament
