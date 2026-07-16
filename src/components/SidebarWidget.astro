@@ -1,25 +1,32 @@
 ---
-export interface Props {
-  lang: 'ru' | 'en';
-  images?: string[];
+export interface GalleryItem {
+  src: string;
+  href: string;
 }
 
-const { lang, images = [
-  '/assets/foto/wshop-bi1_thumb.jpg',
-  '/assets/foto/agakhan-conf4_thumb.jpg',
-  '/assets/foto/wshop-ja4_thumb.jpg',
-] } = Astro.props;
+export interface Props {
+  lang: 'ru' | 'en';
+  items?: GalleryItem[];
+}
 
-const maxImages = images.slice(0, 3);
+const { lang } = Astro.props;
 const p = lang === 'ru' ? '/ru' : '/en';
+
+const galleryItems = Astro.props.items ?? [
+  { src: '/assets/foto/wshop-bi1_thumb.jpg', href: `${p}/gallery/2` },
+  { src: '/assets/foto/agakhan-conf4_thumb.jpg', href: `${p}/gallery/1` },
+  { src: '/assets/foto/wshop-ja4_thumb.jpg', href: `${p}/gallery/3` },
+];
+
+const maxItems = galleryItems.slice(0, 3);
 const galleryLink = `${p}/gallery`;
 ---
 
 <div class="card">
   <h3>{lang === 'ru' ? 'Фотогалерея' : 'Photo Gallery'}</h3>
-  {maxImages.map((img) => (
-    <a href={galleryLink}>
-      <img src={img} alt="" style="width:100%;border-radius:4px;margin-bottom:0.75rem;" />
+  {maxItems.map((item) => (
+    <a href={item.href}>
+      <img src={item.src} alt="" style="width:100%;border-radius:4px;margin-bottom:0.75rem;" />
     </a>
   ))}
   <a href={galleryLink} style="display:inline-block;font-weight:600;">
