@@ -2,15 +2,30 @@
 
 Сайт ОО «Каунтерпарт-Шериктеш». Astro 5, статика, Cloudflare Pages.
 
-## Редактирование контента (Decap CMS)
+---
 
-### Вход
+## Редактору
 
-1. Открой **https://www.sheriktesh.org.kg/admin/**
-2. Нажми «Login with GitHub»
-3. Авторизуйся через GitHub (нужен доступ Write к репозиторию)
+### 1. Создать аккаунт на GitHub
 
-### Коллекции
+Если нет аккаунта:
+1. Зайти на https://github.com/signup
+2. Ввести email, придумать пароль, подтвердить email
+3. **Запомнить username** — он понадобится
+
+Гайды: [GitHub для начинающих](https://blog.skillfactory.ru/github-dlya-nachinayuschih/) · [Git и GitHub (Tproger)](https://tproger.ru/articles/chto-takoe-git-i-github--rukovodstvo-dlya-nachinayushhih)
+
+### 2. Сообщить владельцу свой username
+
+Написать: «Мой GitHub: username»
+
+Владелец добавит вас в Collaborators (роль Write). На почту придёт приглашение — принять.
+
+### 3. Войти в CMS
+
+https://www.sheriktesh.org.kg/admin/ → **Login with GitHub**
+
+### 4. Коллекции
 
 | Раздел | Что редактирует |
 |--------|----------------|
@@ -19,19 +34,36 @@
 | **Documents** | Библиотека (Конвенции, Обучающие пособия, Публикации) — PDF + описание |
 | **Galleries** | Фотогалереи — заголовок, порядок, изображения |
 
-Локализация: переключай вкладку **RU / EN** в редакторе.
+Переключай язык **RU / EN** вверху редактора.
 
-### Медиафайлы
+### 5. Как создать/редактировать
 
-Загружай изображения через CMS → попадают в `/public/assets/`. PDF для документов клади в `/public/assets/documents/` (через Git).
+- **Создать**: выбрать коллекцию → **New** → заполнить поля (Title, Description, Body/Image) → **Publish**
+- **Редактировать**: кликнуть запись → изменить → **Publish**
+- **Загрузить фото**: поле Image → **Choose an image** → выбрать файл
 
-### Важно
+### 6. Важно
 
-- После сохранения изменений сайт пересобирается автоматически (~1-2 мин)
+- Изменения применяются через ~1–2 мин (GitHub Actions собирает сайт)
+- Языки независимы: русская и английская версии — разные записи
+- Не удаляй записи без необходимости (сломаются ссылки)
 - Не редактируй файлы через CMS одновременно с Git — возможны конфликты
-- Для добавления нового редактора: Settings → Collaborators в репозитории GitHub
 
-## Локальный запуск
+### Ссылки на русском
+
+- [Decap CMS + Astro (документация)](https://docs.astro.build/ru/guides/cms/decap-cms/)
+- [Decap CMS — установка и настройка](https://truetech.dev/websites-development/services/cms-other/decap-cms-git-based-installation-setup.html)
+- [GitHub для новичков (SkillFactory)](https://blog.skillfactory.ru/github-dlya-nachinayuschih/)
+- [Git и GitHub (Tproger)](https://tproger.ru/articles/chto-takoe-git-i-github--rukovodstvo-dlya-nachinayushhih)
+- [GitHub для новичков (pimenov.ai)](https://pimenov.ai/knowledge/github-dlya-novichkov-rukovodstvo/)
+- [Официальная документация GitHub (рус.)](https://docs.github.com/ru/get-started)
+- [Видеокурс Git и GitHub (ITDoctor)](https://dzen.ru/video/watch/66b204e3ad8f77488e573cf9)
+
+---
+
+## Разработчику
+
+### Локальный запуск
 
 ```bash
 npm install
@@ -45,14 +77,14 @@ npm run preview    # просмотр собранного
 1. Запусти `npx decap-server` (отдельный терминал)
 2. CMS работает с `local_backend: true` (уже в конфиге)
 
-## Технический стек
+### Технический стек
 
 - **Astro 5.18** — генератор статики
 - **Decap CMS** (CDN, standalone) — управление контентом
 - **Cloudflare Pages** — хостинг + деплой
 - **Cloudflare Worker** (`decap-proxy`) — OAuth proxy для CMS
 
-## Домены
+### Домены
 
 | Домен | Назначение |
 |-------|-----------|
@@ -60,7 +92,7 @@ npm run preview    # просмотр собранного
 | `sheriktesh.org.kg` | Редирект 301 → `www` |
 | `decap.sheriktesh.org.kg` | OAuth прокси для CMS |
 
-## Структура
+### Структура
 
 ```
 src/
