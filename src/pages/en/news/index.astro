@@ -17,7 +17,7 @@ const news = (await getCollection('news', (n) => n.data.lang === lang))
     {news.map((n) => (
       <li style="margin-bottom: 0.5em;">
         {n.data.title},
-        <a href={`/en/news/${n.id.replace(/^(ru|en)-/, '').replace(/\.md$/, '')}/`}>more...</a>
+        <a href={`/en/news/${n.id.replace(/^(ru|en)\//, '').replace(/\.md$/, '')}/`}>more...</a>
       </li>
     ))}
   </ul>

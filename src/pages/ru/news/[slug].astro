@@ -7,7 +7,7 @@ export const prerender = true;
 export async function getStaticPaths() {
   const entries = await getCollection('news', (e) => e.data.lang === 'ru');
   return entries.map((e) => ({
-    params: { slug: e.slug.replace(/^ru-/, '') },
+    params: { slug: e.slug.replace(/^(ru|en)\//, '') },
     props: { entry: e },
   }));
 }
