@@ -133,6 +133,10 @@ header {
   color: var(--accent-light);
 }
 
+.nav > .dropdown > a[role="button"] {
+  cursor: pointer;
+}
+
 .dropdown {
   position: relative;
 }
@@ -410,6 +414,7 @@ footer p:last-child {
   }
 
   .dropdown-content {
+    display: block;
     position: static;
     box-shadow: none;
     background: var(--primary-light);

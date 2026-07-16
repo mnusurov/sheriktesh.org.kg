@@ -38,7 +38,7 @@ const programs = [
         <a href={p || '/'}>{label('Главная', 'Home')}</a>
         <a href={`${p}/news`}>{label('Новости', 'News')}</a>
         <div class="dropdown">
-          <a>{label('Партнёры', 'Partners')}</a>
+          <a role="button" tabindex="0">{label('Партнёры', 'Partners')}</a>
           <div class="dropdown-content">
             <a href={`${p}/about/akdn`}>{label('АКДН', 'AKDN')}</a>
             <a href={`${p}/about/ec`}>{label('Европейская Комиссия', 'European Commission')}</a>
