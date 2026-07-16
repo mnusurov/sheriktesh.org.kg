@@ -1,0 +1,4 @@
+name = "redirect-main"
+main = "worker.js"
+compatibility_date = "2026-07-16"
+routes = [{ pattern = "sheriktesh.org.kg/*", zone_name = "sheriktesh.org.kg" }]
