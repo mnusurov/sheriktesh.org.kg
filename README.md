@@ -33,6 +33,11 @@ https://www.sheriktesh.org.kg/admin/ → **Login with GitHub**
 | **Programs** | Программы — заголовок, порядок, текст |
 | **Documents** | Библиотека (Конвенции, Обучающие пособия, Публикации) — PDF + описание |
 | **Galleries** | Фотогалереи — заголовок, порядок, изображения |
+| **Partners** | Партнёры (АКДН, Еврокомиссия, УВКБ ООН, Местные) |
+| **About** | О нас (Деятельность, Структура, История, HTF) |
+| **Contact** | Контакты |
+| **Staff** | Штат — ФИО, должность, фото |
+| **Homepage** | Главная — блоки hero, о нас, история, деятельность |
 
 Переключай язык **RU / EN** вверху редактора.
 
@@ -96,11 +101,16 @@ npm run preview    # просмотр собранного
 
 ```
 src/
-  content/          # MD-файлы контента (4 коллекции × 2 языка)
+  content/          # MD-файлы контента (9 коллекций × 2 языка)
     news/{ru,en}/
     programs/{ru,en}/
     documents/{ru,en}/
     galleries/{ru,en}/
+    partners/{ru,en}/
+    about/{ru,en}/
+    contact/{ru,en}/
+    staff/{ru,en}/
+    homepage/{ru,en}/
   components/       # .astro компоненты
   layouts/          # BaseLayout, PageLayout
   pages/{ru,en}/    # Страницы по языкам
