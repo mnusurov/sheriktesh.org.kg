@@ -55,10 +55,14 @@ collections:
       - { label: Title, name: title, widget: string, i18n: true }
       - { label: Lang, name: lang, widget: select, options: [ru, en], i18n: false }
       - { label: Category, name: category, widget: select, options: [conventions, manuals, publications], i18n: false }
-      - { label: Docs, name: docs, widget: list, i18n: false, fields:
+      - label: Docs
+        name: docs
+        widget: list
+        i18n: false
+        fields:
           - { label: PDF file, name: pdf, widget: file }
           - { label: Cover image, name: cover, widget: image, required: false }
-          - { label: Description, name: description, widget: text, i18n: true } }
+          - { label: Description, name: description, widget: text, i18n: true }
 
   - name: galleries
     label: Galleries
