@@ -6,7 +6,7 @@
 
 ### Вход
 
-1. Открой **https://test.sheriktesh.org.kg/admin/**
+1. Открой **https://www.sheriktesh.org.kg/admin/**
 2. Нажми «Login with GitHub»
 3. Авторизуйся через GitHub (нужен доступ Write к репозиторию)
 
@@ -56,9 +56,9 @@ npm run preview    # просмотр собранного
 
 | Домен | Назначение |
 |-------|-----------|
-| `test.sheriktesh.org.kg` | Рабочий сайт (CF Pages) |
+| `www.sheriktesh.org.kg` | Основной сайт (CF Pages) |
+| `sheriktesh.org.kg` | Редирект 301 → `www` |
 | `decap.sheriktesh.org.kg` | OAuth прокси для CMS |
-| `sheriktesh.org.kg` | Основной домен (в перспективе) |
 
 ## Структура
 
