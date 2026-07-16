@@ -1,6 +1,6 @@
 ---
-title: '''Local Integration Support Program'''
-lang: 'en'
+title: Local Integration Support Program
+lang: en
 order: 10
 ---
 
