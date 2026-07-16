@@ -7,12 +7,13 @@ export const prerender = true;
 const lang = 'ru';
 const title = 'Программы';
 const pageTitle = 'Программы и проекты';
+const description = 'Программы и проекты ОО Каунтерпарт-Шериктеш';
 
 const programs = (await getCollection('programs', (p) => p.data.lang === lang))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
   <p>Общественное объединение «Каунтерпарт-Шериктеш» реализует следующие программы и проекты:</p>
 
   <ul>

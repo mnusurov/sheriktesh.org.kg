@@ -13,9 +13,10 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const description = 'Фотогалерея ОО Каунтерпарт-Шериктеш';
 ---
 
-<PageLayout title={entry.data.title} lang={entry.data.lang} pageTitle={entry.data.title}>
+<PageLayout title={entry.data.title} lang={entry.data.lang} pageTitle={entry.data.title} description={description}>
   <div class="gallery-grid">
     {entry.data.images.map((img) => (
       <img src={img} alt="" />

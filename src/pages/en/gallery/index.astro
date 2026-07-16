@@ -7,12 +7,13 @@ export const prerender = true;
 const lang = 'en';
 const title = 'Photo Gallery';
 const pageTitle = 'Photo Gallery';
+const description = 'Photo gallery of PA Counterpart-Sheriktesh';
 
 const galleries = (await getCollection('galleries', (g) => g.data.lang === lang))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
   <p>Photos of the organization's events and projects.</p>
 
   <ul>

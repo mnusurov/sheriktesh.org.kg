@@ -7,12 +7,13 @@ export const prerender = true;
 const lang = 'en';
 const title = 'Programs';
 const pageTitle = 'Programs and Projects';
+const description = 'Programs and projects of PA Counterpart-Sheriktesh';
 
 const programs = (await getCollection('programs', (p) => p.data.lang === lang))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
   <p>The Public Association «Counterpart-Sheriktesh» implements the following programs and projects:</p>
 
   <ul>

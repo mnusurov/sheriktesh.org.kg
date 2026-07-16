@@ -7,11 +7,12 @@ export const prerender = true;
 const lang = 'ru';
 const title = 'Наши публикации';
 const pageTitle = 'Наши публикации';
+const description = 'Наши публикации — библиотека ОО Каунтерпарт-Шериктеш';
 
 const [category] = await getCollection('documents', (d) => d.data.category === 'publications' && d.data.lang === lang);
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
   <div class="doc-list">
     {category.data.docs.map((doc) => (
       <div class="doc-item">

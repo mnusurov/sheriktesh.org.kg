@@ -16,6 +16,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<PageLayout title={entry.data.title} lang={entry.data.lang} pageTitle={entry.data.title}>
+<PageLayout title={entry.data.title} lang={entry.data.lang} pageTitle={entry.data.title} description={entry.data.description} image={entry.data.image || '/assets/og-image.png'}>
   <Content />
 </PageLayout>

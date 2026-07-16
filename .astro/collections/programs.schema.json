@@ -17,6 +17,9 @@
         "order": {
           "type": "number"
         },
+        "description": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }

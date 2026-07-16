@@ -5,9 +5,15 @@ import Footer from '../components/Footer.astro';
 export interface Props {
   title: string;
   lang: 'ru' | 'en';
+  description?: string;
+  image?: string;
 }
 
-const { title, lang } = Astro.props;
+const { title, lang, description, image = '/assets/og-image.png' } = Astro.props;
+
+const siteName = lang === 'ru' ? 'Каунтерпарт-Шериктеш' : 'Counterpart-Sheriktesh';
+const fullTitle = `${title} | ${siteName}`;
+const url = Astro.url;
 ---
 
 <!DOCTYPE html>
@@ -15,9 +21,22 @@ const { title, lang } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | Каунтерпарт-Шериктеш</title>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description || ''} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description || ''} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description || ''} />
+    <meta name="twitter:image" content={image} />
+    <link rel="canonical" href={url} />
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
   <body>
     <NavBar lang={lang} />

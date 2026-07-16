@@ -7,12 +7,13 @@ export const prerender = true;
 const lang = 'ru';
 const title = 'Фотогалерея';
 const pageTitle = 'Фотогалерея';
+const description = 'Фотогалерея ОО Каунтерпарт-Шериктеш';
 
 const galleries = (await getCollection('galleries', (g) => g.data.lang === lang))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle}>
+<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
   <p>Фотографии мероприятий и проектов организации.</p>
 
   <ul>

@@ -6,6 +6,7 @@ const news = defineCollection({
     lang: z.enum(['ru', 'en']),
     date: z.string(),
     image: z.string().optional(),
+    description: z.string().optional(),
     author: z.string().optional(),
   })
 })
@@ -15,6 +16,7 @@ const programs = defineCollection({
     title: z.string(),
     lang: z.enum(['ru', 'en']),
     order: z.number(),
+    description: z.string().optional(),
   })
 })
 
