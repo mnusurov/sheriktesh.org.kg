@@ -11,7 +11,8 @@ const { lang, images = [
 ] } = Astro.props;
 
 const maxImages = images.slice(0, 3);
-const galleryLink = lang === 'en' ? '/en/gallery' : '/gallery';
+const p = lang === 'ru' ? '/ru' : '/en';
+const galleryLink = `${p}/gallery`;
 ---
 
 <div class="card">
