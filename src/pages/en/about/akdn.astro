@@ -1,16 +1,17 @@
 ---
-import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'en';
-const title = 'Aga Khan Development Network';
-const pageTitle = 'Aga Khan Development Network';
-const description = 'Aga Khan Development Network — partner of PA Counterpart-Sheriktesh';
+const page = await getCollection('pages', ({ slug }) => slug === 'en/akdn')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <p>The Aga Khan Development Network (AKDN) is a group of development agencies with mandates ranging from health and education to architecture, culture, microfinance, disaster reduction, rural development, private sector enterprise development and historic cities restoration.</p>
-<p>AKDN focuses its efforts on health, education, culture, rural development, institutional development and economic development stimulation. It specializes in improving living conditions and opportunities for the poor, without distinction of religion, origin or gender.</p>
-<p>For more information, please visit the <a href="http://www.akdn.org/" target="_blank">official AKDN website</a>.</p>
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

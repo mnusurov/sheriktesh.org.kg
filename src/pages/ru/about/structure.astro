@@ -1,16 +1,17 @@
 ---
-import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'ru';
-const title = 'Структура';
-const pageTitle = 'Структура';
-const description = 'Организационная структура ОО Каунтерпарт-Шериктеш';
+const page = await getCollection('pages', ({ slug }) => slug === 'ru/structure')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <p><strong>Организационная структура ОО "Каунтерпарт-Шериктеш"</strong></p>
-        <p>&nbsp;</p>
-        <p><img src="/assets/foto/structure_ru.gif" width="671" height="481"></p>
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

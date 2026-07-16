@@ -1,18 +1,17 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'ru';
-const title = 'Адрес и телефоны';
-const pageTitle = 'Адрес и телефоны';
-const description = 'Контактная информация ОО Каунтерпарт-Шериктеш: адрес, телефон, email';
+const page = await getCollection('pages', ({ slug }) => slug === 'ru/contact')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <p><strong>Общественное Объединение "Каунтерпарт-Шериктеш"</strong></p>
-      <p>Адрес:</p>
-      <p>720040, Кыргызстан г. Бишкек ул. Абдрахманова д. 204</p>
-      <p>Тел: (+996 312) 66-21-88, 66-46-36, факс: (+996 312) 62-08-30</p>
-      <p><img src="/assets/pix/e-mail.gif" width="179" height="14"></p>
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

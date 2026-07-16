@@ -1,14 +1,17 @@
 ---
-import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'ru';
-const title = 'Как доехать';
-const pageTitle = 'Как доехать';
-const description = 'Адрес и схема проезда к офису ОО Каунтерпарт-Шериктеш в Бишкеке';
+const page = await getCollection('pages', ({ slug }) => slug === 'ru/htf')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <p><img src="/assets/pix/map_ru.gif" width="721" height="554"></p>
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

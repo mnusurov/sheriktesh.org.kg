@@ -77,3 +77,43 @@ collections:
       - { label: Order, name: order, widget: number, i18n: false }
       - { label: Date, name: date, widget: datetime, required: false, i18n: false }
       - { label: Images, name: images, widget: list, field: { label: Image, name: image, widget: image }, i18n: false }
+
+  - name: pages
+    label: Страницы
+    label_singular: Страница
+    folder: src/content/pages
+    i18n: true
+    create: true
+    delete: true
+    fields:
+      - { label: Заголовок, name: title, widget: string, i18n: true }
+      - { label: Язык, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Содержание, name: body, widget: markdown, i18n: true }
+
+  - name: staff
+    label: Штат
+    label_singular: Сотрудник
+    folder: src/content/staff
+    i18n: true
+    create: true
+    delete: true
+    fields:
+      - { label: Имя, name: title, widget: string, i18n: true }
+      - { label: Язык, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Должность, name: role, widget: string, i18n: true }
+      - { label: Фото, name: photo, widget: image, i18n: false }
+      - { label: Порядок, name: order, widget: number, i18n: false }
+
+  - name: homepage
+    label: Главная
+    label_singular: Блок
+    folder: src/content/homepage
+    i18n: true
+    create: true
+    delete: true
+    fields:
+      - { label: Тип блока, name: block_type, widget: select, options: [hero, about, history, activities], i18n: false }
+      - { label: Заголовок, name: title, widget: string, i18n: true }
+      - { label: Язык, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Порядок, name: order, widget: number, i18n: false }
+      - { label: Содержание, name: body, widget: markdown, i18n: true }

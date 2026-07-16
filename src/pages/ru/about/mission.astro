@@ -1,29 +1,17 @@
 ---
-import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'ru';
-const title = 'Миссия';
-const pageTitle = 'Миссия';
-const description = 'Миссия ОО Каунтерпарт-Шериктеш — содействие развитию гражданского общества путем усиления потенциала его субъектов';
+const page = await getCollection('pages', ({ slug }) => slug === 'ru/mission')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <p><strong>Миссия организации:</strong></p>
-      <p>С момента своего создания (январь 2002 г.) Общественное объединение "Каунтерпарт-Шериктеш" определило свою миссию как:</p>
-      <p><em><strong>"Содействие развитию гражданского общества путем усиления потенциала его субъектов для их эффективного участия в процессе принятия решений и интеграции в мировое сообщество через обучение, информационную поддержку и мобилизацию ресурсов".</strong></em></p>
-      <p>Для выполнения своей миссии Общественное объединение "Каунтерпарт-Шериктеш" осуществляет деятельность по следующим направлениям:
-      <ul>
-      <li>Организационное развитие</li>
-      <li>Тренинговые программы/исследования</li>
-      <li>Представительские/Контрактные Услуги</li>
-      <li>Информационная поддержка</li>
-      <li>Социальное партнерство</li>
-      <li>Эдвокаси/Кампании/Создание Коалиций</li>
-      <li>Волонтерство</li>
-      <li>Социальная мобилизация</li>
-      <li>Права человека</li>
-      </ul>
-      </p>
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

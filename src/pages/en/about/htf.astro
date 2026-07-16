@@ -1,14 +1,17 @@
 ---
-import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'en';
-const title = 'How to Find Us';
-const pageTitle = 'How to Find Us';
-const description = 'How to find us — office address and directions to PA Counterpart-Sheriktesh in Bishkek';
+const page = await getCollection('pages', ({ slug }) => slug === 'en/htf')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <p><img src="/assets/pix/map_en.gif" width="721" height="554" alt="Map to the office"></p>
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

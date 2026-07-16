@@ -1,16 +1,17 @@
 ---
-import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'ru';
-const title = 'АКДН';
-const pageTitle = 'АКДН';
-const description = 'Сеть по Развитию Фонда Ага Хана — партнёр ОО Каунтерпарт-Шериктеш';
+const page = await getCollection('pages', ({ slug }) => slug === 'ru/akdn')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <p>Сеть по Развитию Фонда Ага Хана является группой агентств по развитию с полномочиями, варьирующимися от здоровья и образования до архитектуры, культуры, микрофинансирования, уменьшения катастроф, развития удалённых регионов, развития предприятий частного сектора и возрождения исторических городов.</p>
-          <p>Сеть по Развитию Фонда Ага Хана  фокусирует усилия на здоровье, образовании, культуре, развитии удалённых регионов, институциональном развитии и стимулировании экономического развития. Она специализируется на улучшении жизненных условий и возможностей для бедных, не различая их по религии, происхождению или полу. </p>
-          <p>За дополнительной информацией, пожалуйста, обращайтесь на <a href="http://www.akdn.org/" target="_blank">официальный сайт Сети по Развитию Фонда Ага Хана</a>.</p>
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

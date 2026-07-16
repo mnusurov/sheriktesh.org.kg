@@ -1,75 +1,17 @@
 ---
-import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
 
 export const prerender = true;
 
 const lang = 'en';
-const title = 'Local Partners';
-const pageTitle = 'Local Partners';
-const description = 'Local partners of PA Counterpart-Sheriktesh in the Kyrgyz Republic';
+const page = await getCollection('pages', ({ slug }) => slug === 'en/localngo')
+const { data } = page[0]
+const { Content } = await page[0]!.render()
 ---
 
-<PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <strong>Partners of PA "Counterpart-Sheriktesh" in the Kyrgyz Republic:</strong><br><br>
-<em>Bishkek</em><br>
-Administration of the President of the Kyrgyz Republic<br>
-Government of the Kyrgyz Republic<br>
-Regional Administrations of the Kyrgyz Republic<br>
-State Personnel Service<br>
-Ministry of Justice of the Kyrgyz Republic<br>
-National Agency for Local Self-Government<br>
-Community Development and Investment Agency<br>
-International Center for Non-Profit Law<br>
-Aga Khan Development Network<br>
-Kyrgyz-Russian Slavic University<br>
-American University of Central Asia<br>
-United Nations High Commissioner for Refugees<br>
-European Commission Office in the Kyrgyz Republic<br>
-United Nations Development Programme<br>
-International Center "Interbilim"<br>
-Coalition for Democracy and Civil Society<br>
-Association of Local Self-Government Bodies of Villages and Towns of the KR<br>
-Association of Civil Society Support Centers<br>
-Association of Elderly People of Kyrgyzstan<br>
-NGO "Akyikat Zholu"<br><br>
-<em>Chui Region</em><br>
-Public Association "CPEK"<br>
-Public Association "Miloserdie-Yntymak"<br>
-Public Association "Adab"<br>
-Public Association "Farmers' House Yavan"<br>
-Public Foundation "Chui Murgab"<br>
-Public Association "Help to Refugees"<br><br>
-<em>Kara-Balta</em><br>
-Public Association "Consulting" Initiative Support Center<br>
-Microcredit Agency "Umtul"<br><br>
-<em>Kant</em><br>
-Public Association Women's Organization "Alga"<br>
-Public Association "Elsen"<br><br>
-<em>Tokmok</em><br>
-Public Association of Initiative Youth "Tseonis"<br><br>
-<em>Chui-Tokmok</em><br>
-Public Association "Yrys Kenchi"<br><br>
-<em>Issyk-Kul Region</em><br>
-Public Association "Leader" Center for Civil Initiatives Support<br>
-Microcredit Agency "Sairon and Co"<br><br>
-<em>Batken Region</em><br>
-Public Foundation "For International Tolerance"<br>
-Public Association "Insan Leilek"<br><br>
-<em>Jalalabat Region</em><br>
-Public Association "Women Leaders of Jalalabat"<br>
-Public Foundation "Coordination Center for NGO Support"<br>
-NGO "Aitold"<br>
-Public Association "Aibek"<br><br>
-<em>Naryn Region</em><br>
-Naryn Society of the Red Crescent of the Kyrgyz Republic<br><br>
-<em>Osh Region</em><br>
-International Center "Interbilim"<br><br>
-<em>Nookat</em><br>
-Public Association "TsPGO-Nookat"<br>
-POT "Zhaamat - Kuchtoru"<br><br>
-<em>Talas Region</em><br>
-Center for the Development of Civil Initiatives "Aikol"<br>
-PA "Zhaamattar kelegechi"<br>
-NGO "Social Support for Rural Women"<br>
-POT "Yntymak"
+<PageLayout title={data.title} lang={lang} pageTitle={data.title}>
+  <article class="page-content">
+    <Content />
+  </article>
 </PageLayout>

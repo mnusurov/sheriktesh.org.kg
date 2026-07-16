@@ -45,4 +45,30 @@ const galleries = defineCollection({
   })
 })
 
-export const collections = { news, programs, documents, galleries }
+const pages = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    lang: z.enum(['ru', 'en']),
+  })
+})
+
+const staff = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    lang: z.enum(['ru', 'en']),
+    role: z.string(),
+    photo: z.string(),
+    order: z.number(),
+  })
+})
+
+const homepage = defineCollection({
+  schema: z.object({
+    block_type: z.enum(['hero', 'about', 'history', 'activities']),
+    title: z.string(),
+    lang: z.enum(['ru', 'en']),
+    order: z.number(),
+  })
+})
+
+export const collections = { news, programs, documents, galleries, pages, staff, homepage }
