@@ -5,7 +5,7 @@ import PageLayout from '@/layouts/PageLayout.astro'
 export const prerender = true;
 
 const lang = 'ru';
-const page = await getCollection('pages', ({ slug }) => slug === 'ru/ec')
+const page = await getCollection('partners', ({ slug }) => slug === 'ru/ec')
 const { data } = page[0]
 const { Content } = await page[0]!.render()
 ---

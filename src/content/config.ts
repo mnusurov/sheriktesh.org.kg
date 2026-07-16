@@ -45,7 +45,21 @@ const galleries = defineCollection({
   })
 })
 
-const pages = defineCollection({
+const partners = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    lang: z.enum(['ru', 'en']),
+  })
+})
+
+const about = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    lang: z.enum(['ru', 'en']),
+  })
+})
+
+const contact = defineCollection({
   schema: z.object({
     title: z.string(),
     lang: z.enum(['ru', 'en']),
@@ -71,4 +85,4 @@ const homepage = defineCollection({
   })
 })
 
-export const collections = { news, programs, documents, galleries, pages, staff, homepage }
+export const collections = { news, programs, documents, galleries, partners, about, contact, staff, homepage }

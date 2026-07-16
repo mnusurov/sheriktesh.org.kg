@@ -78,10 +78,34 @@ collections:
       - { label: Date, name: date, widget: datetime, required: false, i18n: false }
       - { label: Images, name: images, widget: list, field: { label: Image, name: image, widget: image }, i18n: false }
 
-  - name: pages
-    label: Страницы
+  - name: partners
+    label: Партнёры
+    label_singular: Партнёр
+    folder: src/content/partners
+    i18n: true
+    create: true
+    delete: true
+    fields:
+      - { label: Заголовок, name: title, widget: string, i18n: true }
+      - { label: Язык, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Содержание, name: body, widget: markdown, i18n: true }
+
+  - name: about
+    label: О нас
     label_singular: Страница
-    folder: src/content/pages
+    folder: src/content/about
+    i18n: true
+    create: true
+    delete: true
+    fields:
+      - { label: Заголовок, name: title, widget: string, i18n: true }
+      - { label: Язык, name: lang, widget: select, options: [ru, en], i18n: false }
+      - { label: Содержание, name: body, widget: markdown, i18n: true }
+
+  - name: contact
+    label: Контакты
+    label_singular: Контакт
+    folder: src/content/contact
     i18n: true
     create: true
     delete: true

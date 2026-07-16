@@ -162,7 +162,27 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"documents": Record<string, {
+		"about": Record<string, {
+  id: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
+  collection: "about";
+  data: InferEntrySchema<"about">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"contact": Record<string, {
+  id: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
+  collection: "contact";
+  data: InferEntrySchema<"contact">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"documents": Record<string, {
   id: string;
   render(): Render[".md"];
   slug: string;
@@ -202,13 +222,13 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"pages": Record<string, {
+"partners": Record<string, {
   id: string;
   render(): Render[".md"];
   slug: string;
   body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">;
+  collection: "partners";
+  data: InferEntrySchema<"partners">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
