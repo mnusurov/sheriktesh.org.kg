@@ -36,16 +36,7 @@ const programs = [
       <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
       <nav class="nav" id="main-nav">
         <a href={p || '/'}>{label('Главная', 'Home')}</a>
-        <div class="dropdown">
-          <a href={`${p}/about/mission`}>{label('О нас', 'About us')}</a>
-          <div class="dropdown-content">
-            <a href={`${p}/about/history`}>{label('История', 'History')}</a>
-            <a href={`${p}/about/structure`}>{label('Структура', 'Structure')}</a>
-            <a href={`${p}/about/staff`}>{label('Штат', 'Staff')}</a>
-            <a href={`${p}/about/activity`}>{label('Деятельность', 'Activities')}</a>
-            <a href={`${p}/about/htf`}>{label('Как доехать', 'How to Find Us')}</a>
-          </div>
-        </div>
+        <a href={`${p}/news`}>{label('Новости', 'News')}</a>
         <div class="dropdown">
           <a>{label('Партнёры', 'Partners')}</a>
           <div class="dropdown-content">
@@ -55,7 +46,6 @@ const programs = [
             <a href={`${p}/about/localngo`}>{label('Местные партнёры', 'Local Partners')}</a>
           </div>
         </div>
-        <a href={`${p}/news`}>{label('Новости', 'News')}</a>
         <div class="dropdown">
           <a href={`${p}/programs`}>{label('Программы', 'Programs')}</a>
           <div class="dropdown-content">
@@ -82,7 +72,17 @@ const programs = [
             <a href={`${p}/gallery/5`}>{label('Заседание рабочей группы по проекту АКДН', 'AKDN Project Working Group Meeting')}</a>
           </div>
         </div>
-        <a href={`${p}/contact`}>{label('Контакты', 'Contacts')}</a>
+        <div class="dropdown">
+          <a href={`${p}/about/mission`}>{label('О нас', 'About us')}</a>
+          <div class="dropdown-content">
+            <a href={`${p}/about/activity`}>{label('Деятельность', 'Activities')}</a>
+            <a href={`${p}/about/staff`}>{label('Штат', 'Staff')}</a>
+            <a href={`${p}/about/structure`}>{label('Структура', 'Structure')}</a>
+            <a href={`${p}/about/history`}>{label('История', 'History')}</a>
+            <a href={`${p}/contact`}>{label('Контакты', 'Contacts')}</a>
+            <a href={`${p}/about/htf`}>{label('Как доехать', 'How to Find Us')}</a>
+          </div>
+        </div>
         <a href={lang === 'ru' ? `/en${currentPath.replace(/^\/ru/, '') || '/'}` : `/ru${currentPath.replace(/^\/en/, '') || '/'}`} class="lang-switch">
           {lang === 'ru' ? 'EN' : 'RU'}
         </a>
