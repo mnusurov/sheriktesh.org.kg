@@ -1,6 +1,6 @@
 # sheriktesh.org.kg
 
-Сайт ОО «Каунтерпарт-Шериктеш». Astro 5, статика, Cloudflare Pages.
+[Сайт ОО «Каунтерпарт-Шериктеш»](http://sheriktesh.org.kg). Astro 5, статика, Cloudflare Pages.
 
 ---
 
