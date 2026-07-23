@@ -11,12 +11,31 @@ export interface Props {
 }
 
 const { title, lang, pageTitle, description, image } = Astro.props;
+const p = lang === 'ru' ? '/ru' : '/en';
+
+const sectionMeta: Record<string, { label: string; href: string }> = {
+  about: { label: lang === 'ru' ? 'О нас' : 'About Us', href: `${p}/about/mission` },
+  programs: { label: lang === 'ru' ? 'Программы' : 'Programs', href: `${p}/programs` },
+  news: { label: lang === 'ru' ? 'Новости' : 'News', href: `${p}/news` },
+  gallery: { label: lang === 'ru' ? 'Фотогалереи' : 'Gallery', href: `${p}/gallery` },
+  library: { label: lang === 'ru' ? 'Библиотека' : 'Library', href: `${p}/library/conventions` },
+};
+
+const segments = Astro.url.pathname.replace(/^\/(en|ru)\/?/, '').split('/').filter(Boolean);
+const section = segments.length > 1 ? sectionMeta[segments[0]] : undefined;
 ---
 
 <BaseLayout title={title} lang={lang} description={description} image={image}>
   <div class="page-title">
     <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href={p || '/'}>{lang === 'ru' ? 'Главная' : 'Home'}</a>
+        {section && <><span class="sep">/</span><a href={section.href}>{section.label}</a></>}
+        <span class="sep">/</span>
+        <span class="current">{pageTitle}</span>
+      </nav>
       <h1>{pageTitle}</h1>
+      <div class="rule"></div>
     </div>
   </div>
   <main class="content">

@@ -15,26 +15,44 @@ const rendered = await Promise.all(
     return { data: entry.data, Content }
   })
 )
+
+const yearsActive = new Date().getFullYear() - 2002;
+const programsCount = (await getCollection('programs', (p) => p.data.lang === lang)).length;
 ---
 
 <BaseLayout title="Home" lang={lang}>
+  {rendered.filter(({ data }) => data.block_type === 'hero').map(({ Content }) => (
+    <section class="hero">
+      <div class="container">
+        <h1>Public Association «Counterpart-Sheriktesh»</h1>
+        <Content />
+      </div>
+    </section>
+  ))}
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-num">{yearsActive}</span>
+          <span class="stat-label">Years</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{programsCount}</span>
+          <span class="stat-label">Programs &amp; Projects</span>
+        </div>
+      </div>
+    </div>
+  </section>
   <main class="content">
     <div class="container">
       <div class="content-wrap">
         <div class="content-main">
-          {rendered.map(({ data, Content }) =>
-            data.block_type === 'hero' ? (
-              <section class="hero">
-                <h1>Public Association «Counterpart-Sheriktesh»</h1>
-                <Content />
-              </section>
-            ) : (
-              <section class={`${data.block_type}-section`}>
-                <h2>{data.title}</h2>
-                <Content />
-              </section>
-            )
-          )}
+          {rendered.filter(({ data }) => data.block_type !== 'hero').map(({ data, Content }) => (
+            <section class={`${data.block_type}-section`}>
+              <h2>{data.title}</h2>
+              <Content />
+            </section>
+          ))}
         </div>
         <aside class="content-sidebar">
           <SidebarWidget lang={lang} />

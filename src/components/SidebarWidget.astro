@@ -22,14 +22,43 @@ const maxItems = galleryItems.slice(0, 3);
 const galleryLink = `${p}/gallery`;
 ---
 
-<div class="card">
+<div class="card sidebar-gallery">
   <h3>{lang === 'ru' ? 'Фотогалерея' : 'Photo Gallery'}</h3>
   {maxItems.map((item) => (
-    <a href={item.href}>
-      <img src={item.src} alt="" style="width:100%;border-radius:4px;margin-bottom:0.75rem;" />
+    <a href={item.href} class="sidebar-gallery-thumb">
+      <img src={item.src} alt="" />
     </a>
   ))}
-  <a href={galleryLink} style="display:inline-block;font-weight:600;">
-    {lang === 'ru' ? 'Все фотогалереи →' : 'All galleries →'}
+  <a href={galleryLink} class="sidebar-gallery-link">
+    {lang === 'ru' ? 'Все фотогалереи' : 'All galleries'}
   </a>
 </div>
+
+<style>
+  .sidebar-gallery {
+    background: var(--cream);
+    border: none;
+  }
+  .sidebar-gallery-thumb {
+    display: block;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  .sidebar-gallery-thumb img {
+    width: 100%;
+    display: block;
+    filter: grayscale(20%) sepia(8%);
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), filter 0.3s ease;
+  }
+  .sidebar-gallery-thumb:hover img {
+    transform: scale(1.08);
+    filter: grayscale(0%) sepia(0%);
+  }
+  .sidebar-gallery-link {
+    display: inline-block;
+    color: var(--terracotta) !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--terracotta);
+  }
+</style>

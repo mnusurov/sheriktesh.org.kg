@@ -11,14 +11,24 @@ const description = 'Программы и проекты ОО Каунтерп�
 
 const programs = (await getCollection('programs', (p) => p.data.lang === lang))
   .sort((a, b) => a.data.order - b.data.order);
+
+const excerpt = (body: string) => {
+  const clean = body.replace(/[#*_`>]/g, '').replace(/\s+/g, ' ').trim();
+  return clean.length > 150 ? `${clean.slice(0, 150).trim()}…` : clean;
+};
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
   <p>Общественное объединение «Каунтерпарт-Шериктеш» реализует следующие программы и проекты:</p>
 
-  <ul>
-    {programs.map((p) => (
-      <li><a href={`/ru/programs/prog${p.data.order}/`}>{p.data.title}</a></li>
+  <div class="program-grid">
+    {programs.map((prog, i) => (
+      <div class="program-card">
+        <span class="num">{String(i + 1).padStart(2, '0')}</span>
+        <h3>{prog.data.title}</h3>
+        <p>{excerpt(prog.body)}</p>
+        <a class="read-more" href={`/ru/programs/prog${prog.data.order}/`}>Подробнее →</a>
+      </div>
     ))}
-  </ul>
+  </div>
 </PageLayout>
