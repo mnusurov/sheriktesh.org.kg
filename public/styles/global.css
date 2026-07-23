@@ -528,6 +528,173 @@ header.is-scrolled .logo img {
   color: var(--primary);
 }
 
+/* ── Map Embed (how-to-find-us page — replaces a low-res hand-drawn diagram) ── */
+.map-embed {
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  overflow: hidden;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.map-embed iframe {
+  display: block;
+}
+
+.map-embed-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.map-embed-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-light);
+}
+
+.map-embed-link:hover {
+  color: var(--accent-text);
+}
+
+/* ── Org Chart (structure page — replaces a low-res scanned diagram) ── */
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  font-size: 0.92rem;
+}
+
+.org-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.org-level + .org-level,
+.org-level + .org-branches {
+  margin-top: 1.75rem;
+}
+
+.org-level + .org-level::before,
+.org-level + .org-branches::before {
+  content: '';
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  width: 0;
+  height: 1.75rem;
+  border-left: 2px solid var(--border);
+}
+
+.org-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  padding: 0.7rem 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+}
+
+.org-box--top {
+  border-top-color: var(--terracotta);
+}
+
+.org-box--sm {
+  font-size: 0.86rem;
+  padding: 0.55rem 1rem;
+}
+
+.org-box--leaf {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+  border-top-color: var(--border);
+  padding: 0.45rem 0.9rem;
+}
+
+.org-tag {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.org-branches {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  position: relative;
+  padding-top: 1.75rem;
+  width: 100%;
+}
+
+.org-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 0.6rem;
+}
+
+.org-branch::before {
+  content: '';
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  width: 0;
+  height: 1.75rem;
+  border-left: 2px solid var(--border);
+}
+
+.org-branch:first-child::after {
+  content: '';
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  width: calc(50% + 1.5rem);
+  border-top: 2px solid var(--border);
+}
+
+.org-branch:last-child::after {
+  content: '';
+  position: absolute;
+  top: -1.75rem;
+  right: 50%;
+  width: calc(50% + 1.5rem);
+  border-top: 2px solid var(--border);
+}
+
+.org-branch-row,
+.org-branch-row--leaf {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .org-branches {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .org-branch::before,
+  .org-branch:first-child::after,
+  .org-branch:last-child::after {
+    display: none;
+  }
+
+  .org-branches::before {
+    height: 1.75rem;
+  }
+}
+
 /* ── Gallery Grid (bare <img> children, one gallery's photos) ── */
 .gallery-grid {
   display: grid;
@@ -546,6 +713,58 @@ header.is-scrolled .logo img {
 .gallery-grid img:hover {
   transform: scale(1.04);
   filter: grayscale(0%) sepia(0%);
+}
+
+/* ── Gallery Card Grid (galleries index — one card per album) ── */
+.gallery-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.gallery-card-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  filter: grayscale(15%) sepia(6%);
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), filter 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card-thumb {
+  transform: scale(1.04);
+  filter: grayscale(0%) sepia(0%);
+}
+
+.gallery-card-body {
+  padding: 1.1rem 1.25rem;
+}
+
+.gallery-card-body h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.4rem;
+}
+
+.gallery-card-count {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* ── News List — chronological, editorial rows rather than a card grid ── */
@@ -683,37 +902,74 @@ header.is-scrolled .logo img {
   color: var(--text-light);
 }
 
-/* ── Doc List ── */
-.doc-list {
-  list-style: none;
-  padding: 0;
+/* ── Doc Grid ── */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.doc-item {
+.doc-card {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.15s;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.doc-item:last-child {
-  border-bottom: none;
+.doc-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
 }
 
 .doc-thumb {
-  width: 48px;
-  height: 64px;
+  width: 100%;
+  height: 140px;
   object-fit: cover;
-  flex-shrink: 0;
-  border: 1px solid var(--border);
+  display: block;
+}
+
+.doc-thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: var(--cream);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.doc-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.doc-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 0.75rem;
+}
+
+.doc-meta {
+  font-size: 0.75rem;
+  color: var(--terracotta);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
 }
 
 .doc-link {
-  flex: 1;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--primary-light);
-  font-weight: 500;
 }
 
 .doc-link:hover {

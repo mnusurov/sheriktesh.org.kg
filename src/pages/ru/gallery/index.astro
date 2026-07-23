@@ -16,9 +16,15 @@ const galleries = (await getCollection('galleries', (g) => g.data.lang === lang)
 <PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
   <p>Фотографии мероприятий и проектов организации.</p>
 
-  <ul>
+  <div class="gallery-card-grid">
     {galleries.map((g) => (
-      <li><a href={`/ru/gallery/${g.data.order}/`}>{g.data.title}</a></li>
+      <a class="gallery-card" href={`/ru/gallery/${g.data.order}`}>
+        <img class="gallery-card-thumb" src={g.data.images[0]} alt="" />
+        <div class="gallery-card-body">
+          <h3>{g.data.title}</h3>
+          <span class="gallery-card-count">{g.data.images.length} фото</span>
+        </div>
+      </a>
     ))}
-  </ul>
+  </div>
 </PageLayout>

@@ -31,7 +31,7 @@ const formatDate = (d: string) =>
     {news.map((n) => (
       <article class="news-item">
         <div class="news-date">{formatDate(n.data.date)}</div>
-        <h3><a href={`/ru/news/${n.id.replace(/^(ru|en)\//, '').replace(/\.md$/, '')}/`}>{n.data.title}</a></h3>
+        <h3><a href={`/ru/news/${n.id.replace(/^(ru|en)\//, '').replace(/\.md$/, '')}`}>{n.data.title}</a></h3>
         <p>{n.data.description || excerpt(n.body)}</p>
       </article>
     ))}

@@ -10,7 +10,7 @@
 
   // Auto-tag reveal targets: individual items in grids/lists get their own
   // stagger, long-form article wrappers reveal as one block.
-  document.querySelectorAll('.gallery-grid, .staff-grid, .doc-list, .program-grid, .stats-grid, .activities-section ul, .news-list').forEach(function (group) {
+  document.querySelectorAll('.gallery-grid, .gallery-card-grid, .staff-grid, .doc-grid, .program-grid, .stats-grid, .activities-section ul, .news-list').forEach(function (group) {
     Array.prototype.forEach.call(group.children, function (el) {
       el.classList.add('reveal');
     });

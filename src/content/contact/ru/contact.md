@@ -11,4 +11,4 @@ lang: ru
 
 Тел: (+996 312) 66-21-88, 66-46-36, факс: (+996 312) 62-08-30
 
-sheriktesh@mail.ru
+office@sheriktesh.org.kg

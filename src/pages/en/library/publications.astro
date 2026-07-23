@@ -10,15 +10,31 @@ const pageTitle = 'Our Publications';
 const description = 'Publications — library of PA Counterpart-Sheriktesh';
 
 const [category] = await getCollection('documents', (d) => d.data.category === 'publications' && d.data.lang === lang);
+
+const parseDoc = (desc: string) => {
+  const m = desc.match(/^(.*?)\s*-\s*(PDF\s+.+)$/i);
+  return m ? { name: m[1].trim(), meta: m[2].trim() } : { name: desc, meta: '' };
+};
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <div class="doc-list">
-    {category.data.docs.map((doc) => (
-      <div class="doc-item">
-        {doc.cover && <img class="doc-thumb" src={doc.cover} alt="" />}
-        <a href={`/assets/documents/${doc.pdf}`} target="_blank" class="doc-link">{doc.description}</a>
-      </div>
-    ))}
+  <div class="doc-grid">
+    {category.data.docs.map((doc) => {
+      const { name, meta } = parseDoc(doc.description);
+      return (
+        <div class="doc-card">
+          {doc.cover ? (
+            <img class="doc-thumb" src={doc.cover} alt="" />
+          ) : (
+            <div class="doc-thumb doc-thumb-placeholder" aria-hidden="true">PDF</div>
+          )}
+          <div class="doc-card-body">
+            <p class="doc-title">{name}</p>
+            {meta && <span class="doc-meta">{meta}</span>}
+            <a class="doc-link" href={`/assets/documents/${doc.pdf}`} target="_blank">Open →</a>
+          </div>
+        </div>
+      );
+    })}
   </div>
 </PageLayout>

@@ -11,4 +11,4 @@ Address:
 
 Tel: (+996 312) 66-21-88, 66-46-36, fax: (+996 312) 62-08-30
 
-sheriktesh@mail.ru
+office@sheriktesh.org.kg
