@@ -548,6 +548,47 @@ header.is-scrolled .logo img {
   filter: grayscale(0%) sepia(0%);
 }
 
+/* ── News List — chronological, editorial rows rather than a card grid ── */
+.news-list {
+  margin-top: 1.5rem;
+}
+
+.news-item {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.news-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.news-date {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 0.5rem;
+}
+
+.news-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.news-item h3 a {
+  color: var(--primary);
+}
+
+.news-item h3 a:hover {
+  color: var(--accent-text);
+}
+
+.news-item p {
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
 /* ── Program Grid ── */
 .program-grid {
   display: grid;

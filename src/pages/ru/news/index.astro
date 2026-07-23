@@ -11,15 +11,29 @@ const description = 'Новости ОО Каунтерпарт-Шериктеш
 
 const news = (await getCollection('news', (n) => n.data.lang === lang))
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const excerpt = (body: string) => {
+  const clean = body
+    .replace(/^\s*\*\*[^\n]+\*\*\s*\n+/, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[#*_`>]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return clean.length > 160 ? `${clean.slice(0, 160).trim()}…` : clean;
+};
+
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 
 <PageLayout title={title} lang={lang} pageTitle={pageTitle} description={description}>
-  <ul>
+  <div class="news-list">
     {news.map((n) => (
-      <li style="margin-bottom: 0.5em;">
-        {n.data.title},
-        <a href={`/ru/news/${n.id.replace(/^(ru|en)\//, '').replace(/\.md$/, '')}/`}>далее...</a>
-      </li>
+      <article class="news-item">
+        <div class="news-date">{formatDate(n.data.date)}</div>
+        <h3><a href={`/ru/news/${n.id.replace(/^(ru|en)\//, '').replace(/\.md$/, '')}/`}>{n.data.title}</a></h3>
+        <p>{n.data.description || excerpt(n.body)}</p>
+      </article>
     ))}
-  </ul>
+  </div>
 </PageLayout>
