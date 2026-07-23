@@ -26,7 +26,7 @@ const excerpt = (body: string) => {
       <div class="program-card">
         <span class="num">{String(i + 1).padStart(2, '0')}</span>
         <h3>{prog.data.title}</h3>
-        <p>{excerpt(prog.body)}</p>
+        <p>{prog.data.description || excerpt(prog.body)}</p>
         <a class="read-more" href={`/ru/programs/prog${prog.data.order}/`}>Подробнее →</a>
       </div>
     ))}
