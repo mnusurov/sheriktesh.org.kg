@@ -77,5 +77,4 @@
 /pix/*                                   /assets/pix/:splat            301
 /foto/*                                  /assets/foto/:splat           301
 /books/*                                 /documents/:splat             301
-/favicon.ico                             /favicon.ico                  301
 /html/style.css                          /styles/global.css            301
