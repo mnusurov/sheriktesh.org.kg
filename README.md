@@ -23,7 +23,7 @@
 
 ### 3. Войти в CMS
 
-https://www.sheriktesh.org.kg/admin/ → **Login with GitHub**
+https://www.sheriktesh.org.kg/admin/ → **Sign in with GitHub**
 
 ### 4. Коллекции
 
@@ -54,10 +54,16 @@ https://www.sheriktesh.org.kg/admin/ → **Login with GitHub**
 - Не удаляй записи без необходимости (сломаются ссылки)
 - Не редактируй файлы через CMS одновременно с Git — возможны конфликты
 
-### Ссылки на русском
+### Полезные ссылки
 
-- [Decap CMS + Astro (документация)](https://docs.astro.build/ru/guides/cms/decap-cms/)
-- [Decap CMS — установка и настройка](https://truetech.dev/websites-development/services/cms-other/decap-cms-git-based-installation-setup.html)
+Русскоязычной документации по Sveltia CMS нет — только официальная (англ.):
+
+- [Sveltia CMS — что это и как начать](https://sveltiacms.app/en/docs/intro)
+- [Getting Started](https://sveltiacms.app/en/docs/start)
+- [Collections (коллекции, поля, сортировка)](https://sveltiacms.app/en/docs/collections)
+
+Про GitHub:
+
 - [GitHub для новичков (SkillFactory)](https://blog.skillfactory.ru/github-dlya-nachinayuschih/)
 - [Git и GitHub (Tproger)](https://tproger.ru/articles/chto-takoe-git-i-github--rukovodstvo-dlya-nachinayushhih)
 - [GitHub для новичков (pimenov.ai)](https://pimenov.ai/knowledge/github-dlya-novichkov-rukovodstvo/)
@@ -77,25 +83,19 @@ npm run build      # сборка в dist/
 npm run preview    # просмотр собранного
 ```
 
-Для CMS локально:
-
-1. Запусти `npx decap-server` (отдельный терминал)
-2. CMS работает с `local_backend: true` (уже в конфиге)
-
 ### Технический стек
 
 - **Astro 5.18** — генератор статики
-- **Decap CMS** (CDN, standalone) — управление контентом
+- **Sveltia CMS** (CDN, standalone) — управление контентом; современный git-based преемник Decap/Netlify CMS
 - **Cloudflare Pages** — хостинг + деплой
-- **Cloudflare Worker** (`decap-proxy`) — OAuth proxy для CMS
+- **Cloudflare Pages Functions** (`functions/api/auth`) — OAuth для CMS (GitHub App), тот же origin, что и сайт
 
 ### Домены
 
 | Домен | Назначение |
 |-------|-----------|
-| `www.sheriktesh.org.kg` | Основной сайт (CF Pages) |
+| `www.sheriktesh.org.kg` | Основной сайт (CF Pages) + OAuth для CMS (`/api/auth`) |
 | `sheriktesh.org.kg` | Редирект 301 → `www` |
-| `decap.sheriktesh.org.kg` | OAuth прокси для CMS |
 
 ### Структура
 
@@ -115,6 +115,8 @@ src/
   layouts/          # BaseLayout, PageLayout
   pages/{ru,en}/    # Страницы по языкам
 public/
-  admin/            # Decap CMS (config.yml + index.html)
+  admin/            # Sveltia CMS (config.yml + index.html)
   assets/           # Изображения, документы, PDF
+functions/
+  api/auth/         # OAuth для CMS (Cloudflare Pages Function)
 ```
